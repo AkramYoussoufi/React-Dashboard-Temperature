@@ -7,8 +7,14 @@ import Settings from "./component/Settings/Settings";
 
 function App() {
   const [active, setActive] = useState("Monitor");
+  const username = "Don Fleym";
   return (
     <div className="dashboard">
+      <span className="username--title">
+        <div className="cercle--login"></div>
+        <div>WELCOME</div>
+        <div>{username}</div>
+      </span>
       <div></div>
       {/*THIS MUST KEPT EMPTY TO LET THE DIV RENDER CORRECTLY ITS BEHIND THE NAV BAR*/}
       <div className="navbar--column">
