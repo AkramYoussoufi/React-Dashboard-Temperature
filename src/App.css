@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  height: 100vh;
+}
+
+.navbar--column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #1a262b;
+  position: fixed;
+  height: 100vh;
+  width: 10vmax;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar--column .navbar--logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20vh;
+  width: 100%;
+}
+
+.navbar--column .navbar--logo div img {
+  display: block;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 25%;
+}
+
+.navbar--column .navbar--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.navbar--column .navbar--list button {
+  height: 5em;
+  width: 100%;
+  background-color: #1a262b;
+  color: #eeeeee;
+  border: none;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.027) 0px 0px 0px 2px, rgba(255, 255, 255, 0.027) 0px 4px 6px -1px, rgba(255, 255, 255, 0.027) 0px 1px 0px inset;
+          box-shadow: rgba(255, 255, 255, 0.027) 0px 0px 0px 2px, rgba(255, 255, 255, 0.027) 0px 4px 6px -1px, rgba(255, 255, 255, 0.027) 0px 1px 0px inset;
+  font-weight: 600;
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+}
+
+.navbar--column .navbar--list button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.navbar--column .navbar--list button:active {
+  cursor: pointer;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.navbar--column .navbar--footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 20vh;
+  width: 100%;
+}
+
+.navbar--column .navbar--footer .navbar--footer-content {
+  position: absolute;
+  bottom: 5px;
+}
+
+.dashboard--content {
+  background-color: #eeeeee;
+}
+/*# sourceMappingURL=App.css.map */

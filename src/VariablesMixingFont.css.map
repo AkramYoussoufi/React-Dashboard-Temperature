@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAYA,OAAO,CAAC,6EAAI;AACZ,OAAO,CAAC,sFAAI",
+    "sources": [
+        "VariablesMixingFont.scss"
+    ],
+    "names": [],
+    "file": "VariablesMixingFont.css"
+}

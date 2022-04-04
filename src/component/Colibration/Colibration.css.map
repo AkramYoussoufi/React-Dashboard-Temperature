@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,IAAI;CACvB;;AAED,AAAA,OAAO,CAAC;EACJ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,GAAG;CACxB",
+    "sources": [
+        "Colibration.scss"
+    ],
+    "names": [],
+    "file": "Colibration.css"
+}

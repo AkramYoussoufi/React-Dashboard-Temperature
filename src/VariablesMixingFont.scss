@@ -1,0 +1,16 @@
+$primaryColor: #dceeee;
+$secondaryColor: #aae0e5;
+$thirdColor: #619ed5;
+$Font: "Poppins";
+$white: #eeeeee;
+$linearbg: linear-gradient(to bottom right, $secondaryColor, $primaryColor);
+$dashboard: rgb(26, 38, 43);
+@mixin center {
+    align-items: center;
+    justify-content: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+$Font: "Poppins";
+$DSFont: "Roboto Condensed";
