@@ -231,6 +231,8 @@ body {
 
 .dashboard--content {
   background-color: #eeeeee;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar--column .username--title .username--login--panel:hover .login--username .login--arrow {
