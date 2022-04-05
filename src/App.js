@@ -7,6 +7,7 @@ import Settings from "./component/Settings/Settings";
 
 function App() {
   const [active, setActive] = useState("Monitor");
+  const username = "Don Fleym";
   return (
     <div className="dashboard">
       <div></div>
@@ -23,8 +24,26 @@ function App() {
           <button onClick={() => setActive("Deviations")}>Deviations</button>
           <button onClick={() => setActive("Settings")}>Settings</button>
         </div>
-        <div className="navbar--footer">
-          <div className="navbar--footer-content">FOOTER</div>
+        <div className="username--title">
+          <div className="username--login--panel">
+            <div className="login--cercle"></div>
+            <div className="login--username">
+              {username}
+              <div className="login--arrow">
+                <div className="user--panel">
+                  <div>
+                    <button>Account Management</button>
+                  </div>
+                  <div>
+                    <button className="Logoutbutton">Logout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="login--logo">
+              <img src={require("./user--profile--logo.png")}></img>
+            </div>
+          </div>
         </div>
       </div>
       <div className="dashboard--content">

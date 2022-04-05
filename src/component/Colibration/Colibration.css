@@ -1,16 +1,1 @@
-.coli {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: rows;
-          flex-direction: rows;
-}
-
-.inside {
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}
-/*# sourceMappingURL=Colibration.css.map */
+/* No CSS *//*# sourceMappingURL=Colibration.css.map */

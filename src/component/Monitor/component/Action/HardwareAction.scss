@@ -1,0 +1,23 @@
+@import "C:/Users/Akaymi/dashboard/src/VariablesMixingFont";
+.action--container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .logo--list--container {
+        //container 1
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+    .button--group--container {
+        //container 2
+        width: 50%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+    }
+}
