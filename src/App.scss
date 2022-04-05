@@ -148,6 +148,8 @@ body {
 
 .dashboard--content {
     background-color: $white;
+    height: 100%;
+    width: 100%;
 }
 
 .navbar--column .username--title .username--login--panel:hover .login--username .login--arrow {

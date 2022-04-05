@@ -48,10 +48,12 @@ function App() {
       </div>
       <div className="dashboard--content">
         {/* they gonna work as long as u make specified divs and not general ones because it control them all*/}
-        <div>{active === "Monitor" && <Monitor />}</div>
-        <div>{active === "Colibration" && <Colibration />}</div>
-        <div>{active === "Deviations" && <Deviations />}</div>
-        <div>{active === "Settings" && <Settings />}</div>
+        <div>
+          {active === "Monitor" && <Monitor />}
+          {active === "Colibration" && <Colibration />}
+          {active === "Deviations" && <Deviations />}
+          {active === "Settings" && <Settings />}
+        </div>
       </div>
     </div>
   );

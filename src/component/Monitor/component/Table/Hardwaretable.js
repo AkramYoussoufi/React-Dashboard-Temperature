@@ -8,6 +8,7 @@ function Hardwaretable() {
         <button className="button--group">
           <div className="button--group--arrow"></div> Action
         </button>
+        <button className="button--valid">ACT</button>
       </div>
     </div>
   );
