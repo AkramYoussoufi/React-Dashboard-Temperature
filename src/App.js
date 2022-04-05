@@ -30,7 +30,14 @@ function App() {
             <div className="login--username">
               {username}
               <div className="login--arrow">
-                <div className="user--panel"></div>
+                <div className="user--panel">
+                  <div>
+                    <button>Account Management</button>
+                  </div>
+                  <div>
+                    <button className="Logoutbutton">Logout</button>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="login--logo">

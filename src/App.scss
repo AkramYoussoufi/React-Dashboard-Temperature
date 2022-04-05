@@ -103,16 +103,33 @@ body {
                         transform: translateY(50%);
                     }
                     .user--panel {
-                        position: absolute;
                         width: 100%;
                         height: 100%;
-                        border: solid 2px black;
-                        transform: translateX(-44%);
-                        margin-top: 5px;
                         position: flex;
                         flex-direction: column;
                         @include center();
                         display: none;
+                        button {
+                            transform: translateX(-50%);
+                            border: solid 2px;
+                            width: 20em;
+                            text-align: center;
+                            height: 2.5em;
+                            cursor: pointer;
+                            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                            border: none;
+                            font-weight: 600;
+                            font-family: $LoginTitle;
+                            &:hover {
+                                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+                            }
+                            &:active {
+                                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                            }
+                        }
+                        .Logoutbutton {
+                            color: red;
+                        }
                     }
                 }
             }
