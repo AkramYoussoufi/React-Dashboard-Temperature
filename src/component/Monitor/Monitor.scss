@@ -1,0 +1,29 @@
+.dashboard--content {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30% 10% 60%;
+    height: 100vh;
+}
+
+.dashboard--content--charts {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dashboard--content--action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: row;
+}
+
+.dashboard--content--table {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
+}
