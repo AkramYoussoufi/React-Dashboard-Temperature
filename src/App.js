@@ -10,11 +10,6 @@ function App() {
   const username = "Don Fleym";
   return (
     <div className="dashboard">
-      <span className="username--title">
-        <div className="cercle--login"></div>
-        <div>WELCOME</div>
-        <div>{username}</div>
-      </span>
       <div></div>
       {/*THIS MUST KEPT EMPTY TO LET THE DIV RENDER CORRECTLY ITS BEHIND THE NAV BAR*/}
       <div className="navbar--column">
@@ -29,8 +24,19 @@ function App() {
           <button onClick={() => setActive("Deviations")}>Deviations</button>
           <button onClick={() => setActive("Settings")}>Settings</button>
         </div>
-        <div className="navbar--footer">
-          <div className="navbar--footer-content">FOOTER</div>
+        <div className="username--title">
+          <div className="username--login--panel">
+            <div className="login--cercle"></div>
+            <div className="login--username">
+              {username}
+              <div className="login--arrow">
+                <div className="user--panel"></div>
+              </div>
+            </div>
+            <div className="login--logo">
+              <img src={require("./user--profile--logo.png")}></img>
+            </div>
+          </div>
         </div>
       </div>
       <div className="dashboard--content">
