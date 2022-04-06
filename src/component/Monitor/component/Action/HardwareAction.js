@@ -3,11 +3,14 @@ import "./HardwareAction.css";
 function HardwareAction() {
   return (
     <div className="action--container">
-      <div className="logo--list--container">
-        {/* HERE IS A 50% CONTAINER */}
-      </div>
-      <div className="button--group--container">
-        {/* HERE IS A 50% CONTAINER */}
+      <div className="add--button--container">
+        <button className="add--button">
+          +
+          <div className="arrow">
+            <div class="message">Add your hardware</div>
+            <div class="point"></div>
+          </div>
+        </button>
       </div>
       <div></div>
     </div>

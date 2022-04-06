@@ -12,15 +12,38 @@
         background-color: white;
         position: relative;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        .logo--list {
-            width: 20em;
-            height: 2.2em;
-            position: absolute;
-            top: -2.23em;
-            left: 0px;
-            border-radius: 0px 10px 0px 0px;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-family: $Font;
+            .table--background--boxes {}
+            tr {
+                th {
+                    height: 3em;
+                    background-color: rgb(97, 158, 213);
+                    border: solid 1px rgb(238, 238, 238);
+                    color: white;
+                    font-family: $LoginTitle;
+                }
+                td {
+                    border: solid 1px rgb(238, 238, 238);
+                    height: 2em;
+                    .Modify {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        @include center();
+                        div {
+                            border: solid 2px;
+                            height: 25px;
+                            width: 25px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .Modification {}
+            }
         }
         .button--group {
             width: 15em;
@@ -30,35 +53,20 @@
             right: 0px;
             border-radius: 5px;
             border: none;
-            cursor: pointer;
-            background-color: red;
+            background-color: rgb(255, 0, 0);
             font-family: $DSFont;
             font-size: 0.9em;
             color: white;
+            opacity: 0.1;
+            pointer-events: none;
             .button--group--arrow {
-                width: 0;
-                height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-top: 5px solid white;
+                width: 20px;
+                height: 20px;
                 position: absolute;
-                left: 75px;
-                top: 14px;
+                left: 72px;
+                background-image: url("trash-icon.svg");
+                top: 5px;
             }
-        }
-        .button--valid {
-            width: 10em;
-            height: 2.6em;
-            position: absolute;
-            bottom: 20px;
-            right: 80px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            background-color: rgb(58, 246, 58);
-            font-family: $DSFont;
-            font-size: 0.9em;
-            color: white;
         }
     }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="20"
+   height="20"
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="trash-icon.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="21.025"
+     inkscape:cx="0.7372176"
+     inkscape:cy="10.178359"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <title
+     id="title2">
+		trash
+	</title>
+  <g
+     fill="#d33"
+     id="g6">
+    <path
+       d="M17 2h-3.5l-1-1h-5l-1 1H3v2h14zM4 17a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5H4z"
+       id="path4" />
+  </g>
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+     d="M 5.7481211,18.954194 C 5.1129159,18.872529 4.5011608,18.420364 4.2184605,17.823579 L 4.0665874,17.502973 4.0540065,11.260404 4.0414256,5.0178359 H 10.0112 15.980975 v 6.0618681 c 0,4.254212 -0.01573,6.137028 -0.05273,6.313912 -0.119111,0.569303 -0.585571,1.158403 -1.105853,1.396595 -0.140332,0.06425 -0.413278,0.137339 -0.606546,0.162426 -0.406454,0.05276 -8.0584996,0.05417 -8.4677229,0.0016 z"
+     id="path4924" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+     d="M 3.0439952,2.9964328 V 2.0214031 h 1.748769 1.7487689 L 7.039239,1.5219976 7.5369449,1.0225922 h 2.4749461 2.474945 l 0.497706,0.4994054 0.497706,0.4994055 h 1.748769 1.748769 V 2.9964328 3.9714625 H 10.011891 3.0439952 Z"
+     id="path4963" />
+</svg>
