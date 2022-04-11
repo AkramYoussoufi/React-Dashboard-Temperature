@@ -7,8 +7,8 @@ function HardwareAction() {
         <button className="add--button">
           +
           <div className="arrow">
-            <div class="message">Add your hardware</div>
-            <div class="point"></div>
+            <div className="message">Add your hardware</div>
+            <div className="point"></div>
           </div>
         </button>
       </div>
