@@ -21,9 +21,7 @@
   z-index: 3;
   opacity: 1;
   top: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -42,8 +40,9 @@
 .table--container .confirm--message .message--box {
   position: absolute;
   width: 50em;
-  height: 19em;
+  height: 14em;
   background-color: white;
+  border-radius: 20px;
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,8 +55,72 @@
           flex-direction: column;
 }
 
-.table--container .confirm--message .message--box div {
-  border: solid 2px;
+.table--container .confirm--message .message--box .close--message {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  font-weight: 900;
+  font-family: "Poppins";
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  width: 2em;
+  height: 2em;
+}
+
+.table--container .confirm--message .message--box .message--title {
+  font-weight: 600;
+  font-family: "Poppins";
+  font-size: 2em;
+  text-align: center;
+}
+
+.table--container .confirm--message .message--box .message--button--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table--container .confirm--message .message--box .message--button--container .non--button {
+  background-color: #619ed5;
+  border: none;
+  color: white;
+  width: 10em;
+  height: 3em;
+  border-radius: 2em;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.table--container .confirm--message .message--box .message--button--container .non--button:active {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.table--container .confirm--message .message--box .message--button--container .yes--button {
+  background-color: #aa0000;
+  border: none;
+  color: white;
+  width: 10em;
+  height: 3em;
+  margin-right: 5em;
+  border-radius: 2em;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.table--container .confirm--message .message--box .message--button--container .yes--button:active {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .table--container .table {
@@ -90,6 +153,10 @@
   height: 2em;
 }
 
+.table--container .table table tr td .editsensor {
+  display: none;
+}
+
 .table--container .table table tr td .Modify {
   width: 100%;
   height: 100%;
@@ -105,10 +172,31 @@
 }
 
 .table--container .table table tr td .Modify div {
-  border: solid 2px;
   height: 25px;
   width: 25px;
   cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table--container .table table tr td .Modify div .edit {
+  display: inline;
+  width: 25px;
+  height: 25px;
+}
+
+.table--container .table table tr td .Modify div .correct {
+  display: none;
+  width: 30px;
+  height: 35px;
 }
 
 .table--container .table .button--group {
