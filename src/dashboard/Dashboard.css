@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+.dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 7% 93%;
+      grid-template-rows: 7% 93%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar--column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #619ed5;
+  position: fixed;
+  height: 7vh;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar--column .navbar--logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 7vh;
+  width: 20vmax;
+  overflow: hidden;
+  border-right: solid 2px rgba(0, 0, 0, 0.053);
+}
+
+.navbar--column .navbar--logo div img {
+  display: block;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 35%;
+}
+
+.navbar--column .navbar--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60vmax;
+  height: 7vh;
+  overflow: hidden;
+  border-right: solid 2px rgba(0, 0, 0, 0.053);
+}
+
+.navbar--column .navbar--list button {
+  height: 100%;
+  width: 100%;
+  background-color: #619ed5;
+  color: rgba(255, 255, 255, 0.87);
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  font-weight: 600;
+  font-family: "Roboto Condensed";
+  font-size: 16px;
+}
+
+.navbar--column .navbar--list button:hover {
+  background-color: white;
+  color: #619ed5;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+
+.navbar--column .navbar--list button:active {
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.navbar--column .username--title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 10vh;
+  width: 20vmax;
+  color: rgba(255, 255, 255, 0.87);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar--column .username--title .username--login--panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.navbar--column .username--title .username--login--panel .login--cercle {
+  background-color: greenyellow;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.navbar--column .username--title .username--login--panel .login--username {
+  font-weight: 600;
+  font-family: "Rajdhani";
+  margin-left: 10px;
+  color: white;
+  margin-top: 10px;
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  margin-left: 20px;
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow:hover {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow .user--panel {
+  width: 100%;
+  height: 100%;
+  position: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: none;
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow .user--panel button {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: solid 2px;
+  width: 20em;
+  text-align: center;
+  height: 2.5em;
+  cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border: none;
+  font-weight: 600;
+  font-family: "Rajdhani";
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow .user--panel button:hover {
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow .user--panel button:active {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.navbar--column .username--title .username--login--panel .login--username .login--arrow .user--panel .Logoutbutton {
+  color: red;
+}
+
+.navbar--column .username--title .username--login--panel .login--logo img {
+  width: 35px;
+  height: 35px;
+  margin-top: 4px;
+  margin-left: 10px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.dashboard--content {
+  background-color: #eeeeee;
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow {
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow .user--panel {
+  display: block;
+}
+
+.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow .user--panel:hover {
+  display: block;
+}
+/*# sourceMappingURL=Dashboard.css.map */
