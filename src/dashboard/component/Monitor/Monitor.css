@@ -5,7 +5,6 @@
       grid-template-columns: auto;
   -ms-grid-rows: 30% 10% 60%;
       grid-template-rows: 30% 10% 60%;
-  height: 100vh;
 }
 
 .dashboard--content--charts {

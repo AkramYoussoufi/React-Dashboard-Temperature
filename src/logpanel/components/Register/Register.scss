@@ -1,0 +1,303 @@
+@import "C:/Users/Akaymi/my-app/src/VariablesMixingFont";
+.container {
+    .reg-items {
+        position: relative;
+        flex-direction: column;
+        background-image: linear-gradient( to bottom right, $secondaryColor, $primaryColor);
+        height: 30em;
+        width: 20em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: solid $white 2px;
+        border-left-style: auto;
+        border-radius: 0px 25px 25px 0px;
+        z-index: 1;
+        .wrap {
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 0px 25px 25px 0px;
+            display: flex;
+            position: absolute;
+            @include center();
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+            img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 20em;
+                height: 30em;
+                border-radius: 0px 25px 25px 0px;
+                transform: translateX(0%);
+                transition: all 0.5s linear;
+                pointer-events: auto;
+            }
+        }
+    }
+    .title {
+        font-family: $Font;
+        font-weight: 800;
+        margin-top: 30px;
+        display: block;
+        font-size: 1.5em;
+    }
+    .loginpanel {
+        display: flex;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: $Font;
+        font-size: 15px;
+        input {
+            width: 16em;
+            height: 2.8em;
+            background-color: $white;
+            border: none;
+            border-radius: 3px;
+            margin-top: 18px;
+            display: block;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            &:focus {
+                outline: none;
+            }
+            padding-top: 13px;
+            padding-left: 5px;
+        }
+        .NameReg::after {
+            content: "";
+            position: absolute;
+            height: 0%;
+            width: 14.26em;
+            border-bottom: 3px solid rgb(97, 158, 213);
+            transition: all 0.3s linear;
+            top: 162px;
+            transform: translateX(100%);
+            opacity: 0;
+            display: inline;
+        }
+        .PasswordReg::after {
+            content: "";
+            position: absolute;
+            height: 0%;
+            width: 14.26em;
+            border-bottom: 3px solid rgb(97, 158, 213);
+            transition: all 0.3s linear;
+            top: 217px;
+            transform: translateX(100%);
+            opacity: 0;
+            display: inline;
+        }
+        .RePassword::after {
+            content: "";
+            position: absolute;
+            height: 0%;
+            width: 14.26em;
+            border-bottom: 3px solid rgb(97, 158, 213);
+            transition: all 0.3s linear;
+            top: 272px;
+            transform: translateX(100%);
+            opacity: 0;
+            display: inline;
+        }
+        .Email::after {
+            content: "";
+            position: absolute;
+            height: 0%;
+            width: 14.26em;
+            border-bottom: 3px solid rgb(97, 158, 213);
+            transition: all 0.3s linear;
+            top: 327px;
+            transform: translateX(100%);
+            opacity: 0;
+            display: inline;
+        }
+        span.NameRegText {
+            position: absolute;
+            top: 140px;
+            left: 55px;
+            transition: all 0.3s ease;
+            color: #767676;
+            pointer-events: none;
+        }
+        span.PasswordRegText {
+            position: absolute;
+            top: 195px;
+            left: 55px;
+            transition: all 0.3s ease;
+            color: #767676;
+            pointer-events: none;
+        }
+        span.RePasswordText {
+            position: absolute;
+            top: 250px;
+            left: 55px;
+            transition: all 0.3s ease;
+            color: #767676;
+            pointer-events: none;
+        }
+        span.EmailText {
+            position: absolute;
+            top: 305px;
+            left: 55px;
+            transition: all 0.3s ease;
+            color: #767676;
+            pointer-events: none;
+        }
+        input.loginbutton {
+            background-color: transparent;
+            border: solid 2px $thirdColor;
+            border-radius: 5px;
+            width: 16em;
+            height: 2.5em;
+            cursor: pointer;
+            font-family: $Font;
+            margin-top: 50px;
+            margin-bottom: 75px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            padding: 0px;
+            transition: all 0.2s linear;
+            &:hover {
+                background-color: $thirdColor;
+                color: $white;
+            }
+            &:active {
+                background-color: $thirdColor;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                color: $white;
+            }
+        }
+    }
+    .registerbutton {
+        position: absolute;
+        top: 80px;
+        left: 95px;
+        background-color: transparent;
+        border: solid 2px red;
+        border-radius: 5px;
+        width: 10em;
+        height: 3em;
+        cursor: pointer;
+        color: red;
+        z-index: 3;
+        display: block;
+        font-weight: 600;
+        animation: textmove 5s linear 5s infinite;
+        display: block;
+        &:hover {
+            background-color: red;
+            color: $white;
+            border: solid 2px red;
+        }
+        &:active {
+            background-color: red;
+            color: $white;
+            border: solid 2px red;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+    }
+    .switcher {
+        display: none;
+    }
+}
+
+.loginpanel form div .NameInput:focus+label span.NameRegText,
+.loginpanel form div .NameInput:valid+label span.NameRegText {
+    transform: translateY(-70%);
+    font-size: 12px;
+}
+
+.loginpanel form div .PasswordInput:focus+label span.PasswordRegText,
+.loginpanel form div .PasswordInput:valid+label span.PasswordRegText {
+    transform: translateY(-70%);
+    font-size: 12px;
+}
+
+.loginpanel form div .RePasswordInput:focus+label span.RePasswordText,
+.loginpanel form div .RePasswordInput:valid+label span.RePasswordText {
+    transform: translateY(-70%);
+    font-size: 12px;
+}
+
+.loginpanel form div .Email:focus+label span.EmailText,
+.loginpanel form div .Email:valid+label span.EmailText {
+    transform: translateY(-70%);
+    font-size: 12px;
+}
+
+.loginpanel form div .NameInput:focus+label.NameReg::after,
+.loginpanel form div .NameInput:valid+label.NameReg::after {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.loginpanel form div .PasswordInput:focus+label.PasswordReg::after,
+.loginpanel form div .PasswordInput:valid+label.PasswordReg::after {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.loginpanel form div .RePasswordInput:focus+label.RePassword::after, //
+.loginpanel form div .RePasswordInput:valid+label.RePassword::after {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.loginpanel form div .Email:focus+label.Email::after, //
+.loginpanel form div .Email:valid+label.Email::after {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@media only screen and (max-width: 660px) {
+    .container {
+        .auth {
+            .XCONTAINER {
+                .reg-items {
+                    border-radius: 25px;
+                    position: absolute;
+                    transition: all 0.3s linear;
+                    transform: rotateY(90deg);
+                    .wrap {
+                        display: none;
+                    }
+                }
+                .registerbutton {
+                    display: none;
+                }
+                .switcher {
+                    display: block;
+                    position: absolute;
+                    top: -40px;
+                    left: 87px;
+                    width: 10em;
+                    height: 3em;
+                    background-color: $thirdColor;
+                    border: solid 2px $white;
+                    color: $white;
+                    border-radius: 25px 25px 0px 0px;
+                    transition: all 0.2s linear;
+                     ::after {
+                        content: "Log In Now";
+                    }
+                    &:hover {
+                        background-color: $thirdColor;
+                        border: solid 2px $white;
+                        color: $white;
+                    }
+                    &:active {
+                        background-color: $thirdColor;
+                        border: solid 2px $white;
+                        color: $white;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                }
+            }
+        }
+    }
+}

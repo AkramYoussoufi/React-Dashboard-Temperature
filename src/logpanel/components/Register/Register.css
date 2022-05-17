@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+.container .reg-items {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#aae0e5), to(#dceeee));
+  background-image: linear-gradient(to bottom right, #aae0e5, #dceeee);
+  height: 30em;
+  width: 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: solid #fdfeff 2px;
+  border-left-style: auto;
+  border-radius: 0px 25px 25px 0px;
+  z-index: 1;
+}
+
+.container .reg-items .wrap {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0px 25px 25px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.container .reg-items .wrap img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20em;
+  height: 30em;
+  border-radius: 0px 25px 25px 0px;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  pointer-events: auto;
+}
+
+.container .title {
+  font-family: "Poppins";
+  font-weight: 800;
+  margin-top: 30px;
+  display: block;
+  font-size: 1.5em;
+}
+
+.container .loginpanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+
+.container .loginpanel input {
+  width: 16em;
+  height: 2.8em;
+  background-color: #fdfeff;
+  border: none;
+  border-radius: 3px;
+  margin-top: 18px;
+  display: block;
+  -webkit-box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding-top: 13px;
+  padding-left: 5px;
+}
+
+.container .loginpanel input:focus {
+  outline: none;
+}
+
+.container .loginpanel .NameReg::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 162px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .loginpanel .PasswordReg::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 217px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .loginpanel .RePassword::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 272px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .loginpanel .Email::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 327px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .loginpanel span.NameRegText {
+  position: absolute;
+  top: 140px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .loginpanel span.PasswordRegText {
+  position: absolute;
+  top: 195px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .loginpanel span.RePasswordText {
+  position: absolute;
+  top: 250px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .loginpanel span.EmailText {
+  position: absolute;
+  top: 305px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .loginpanel input.loginbutton {
+  background-color: transparent;
+  border: solid 2px #619ed5;
+  border-radius: 5px;
+  width: 16em;
+  height: 2.5em;
+  cursor: pointer;
+  font-family: "Poppins";
+  margin-top: 50px;
+  margin-bottom: 75px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 0px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.container .loginpanel input.loginbutton:hover {
+  background-color: #619ed5;
+  color: #fdfeff;
+}
+
+.container .loginpanel input.loginbutton:active {
+  background-color: #619ed5;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #fdfeff;
+}
+
+.container .registerbutton {
+  position: absolute;
+  top: 80px;
+  left: 95px;
+  background-color: transparent;
+  border: solid 2px red;
+  border-radius: 5px;
+  width: 10em;
+  height: 3em;
+  cursor: pointer;
+  color: red;
+  z-index: 3;
+  display: block;
+  font-weight: 600;
+  -webkit-animation: textmove 5s linear 5s infinite;
+          animation: textmove 5s linear 5s infinite;
+  display: block;
+}
+
+.container .registerbutton:hover {
+  background-color: red;
+  color: #fdfeff;
+  border: solid 2px red;
+}
+
+.container .registerbutton:active {
+  background-color: red;
+  color: #fdfeff;
+  border: solid 2px red;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.container .switcher {
+  display: none;
+}
+
+.loginpanel form div .NameInput:focus + label span.NameRegText,
+.loginpanel form div .NameInput:valid + label span.NameRegText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .PasswordInput:focus + label span.PasswordRegText,
+.loginpanel form div .PasswordInput:valid + label span.PasswordRegText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .RePasswordInput:focus + label span.RePasswordText,
+.loginpanel form div .RePasswordInput:valid + label span.RePasswordText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .Email:focus + label span.EmailText,
+.loginpanel form div .Email:valid + label span.EmailText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .NameInput:focus + label.NameReg::after,
+.loginpanel form div .NameInput:valid + label.NameReg::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+.loginpanel form div .PasswordInput:focus + label.PasswordReg::after,
+.loginpanel form div .PasswordInput:valid + label.PasswordReg::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+.loginpanel form div .RePasswordInput:focus + label.RePassword::after,
+.loginpanel form div .RePasswordInput:valid + label.RePassword::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+.loginpanel form div .Email:focus + label.Email::after,
+.loginpanel form div .Email:valid + label.Email::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+@media only screen and (max-width: 660px) {
+  .container .auth .XCONTAINER .reg-items {
+    border-radius: 25px;
+    position: absolute;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  .container .auth .XCONTAINER .reg-items .wrap {
+    display: none;
+  }
+  .container .auth .XCONTAINER .registerbutton {
+    display: none;
+  }
+  .container .auth .XCONTAINER .switcher {
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 87px;
+    width: 10em;
+    height: 3em;
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+    border-radius: 25px 25px 0px 0px;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  .container .auth .XCONTAINER .switcher ::after {
+    content: "Log In Now";
+  }
+  .container .auth .XCONTAINER .switcher:hover {
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+  }
+  .container .auth .XCONTAINER .switcher:active {
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+}
+/*# sourceMappingURL=Register.css.map */

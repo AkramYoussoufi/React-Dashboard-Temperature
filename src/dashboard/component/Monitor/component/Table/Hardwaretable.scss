@@ -1,0 +1,133 @@
+@import "C:/Users/Akaymi/dashboard/src/VariablesMixingFont";
+.table--container {
+    width: 100%;
+    height: 89%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .confirm--message {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        opacity: 1;
+        top: 0px;
+        display: none;
+        @include center();
+        .message--overlay {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.3;
+        }
+        .message--box {
+            position: absolute;
+            width: 50em;
+            height: 14em;
+            background-color: white;
+            border-radius: 20px;
+            opacity: 1;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            .close--message {
+                position: absolute;
+                top: 0px;
+                right: 30px;
+                font-weight: 900;
+                font-family: $Font;
+                font-size: 2em;
+                border: none;
+                cursor: pointer;
+                background-color: transparent;
+                width: 2em;
+                height: 2em;
+            }
+            .message--title {
+                font-weight: 600;
+                font-family: $Font;
+                font-size: 2em;
+                text-align: center;
+            }
+            .message--button--container {
+                display: flex;
+                @include center();
+                .non--button {
+                    background-color: $thirdColor;
+                    border: none;
+                    color: white;
+                    width: 10em;
+                    height: 3em;
+                    border-radius: 2em;
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                    &:active {
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                }
+                .yes--button {
+                    background-color: rgb(170, 0, 0);
+                    border: none;
+                    color: white;
+                    width: 10em;
+                    height: 3em;
+                    margin-right: 5em;
+                    border-radius: 2em;
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                    &:active {
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                }
+            }
+        }
+    }
+    .table {
+        display: table;
+        width: 90%;
+        height: 90%;
+        background-color: white;
+        position: relative;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-family: $Font;
+            .table--background--boxes {}
+            tr {
+                th {
+                    height: 3em;
+                    background-color: rgb(97, 158, 213);
+                    border: solid 1px rgb(238, 238, 238);
+                    color: white;
+                    font-family: $LoginTitle;
+                }
+                .Modification {}
+            }
+        }
+        .button--group {
+            width: 15em;
+            height: 2.2em;
+            position: absolute;
+            top: -38px;
+            right: 0px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(255, 0, 0);
+            font-family: $DSFont;
+            font-size: 0.9em;
+            color: white;
+            opacity: 0.1;
+            cursor: not-allowed;
+            .button--group--arrow {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 72px;
+                background-image: url("trash-icon.svg");
+                top: 5px;
+            }
+        }
+    }
+}

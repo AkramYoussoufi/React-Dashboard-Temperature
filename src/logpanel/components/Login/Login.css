@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+.container .auth-items {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#aae0e5), to(#dceeee));
+  background-image: linear-gradient(to bottom right, #aae0e5, #dceeee);
+  height: 30em;
+  width: 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: solid #fdfeff 2px;
+  border-radius: 25px 0px 0px 25px;
+  border-right-style: auto;
+  z-index: 1;
+}
+
+.container .auth-items .wrap {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 25px 0px 0px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.container .auth-items .wrap img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20em;
+  height: 30em;
+  border-radius: 25px 0px 0px 25px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  pointer-events: auto;
+}
+
+.container .auth-items .title {
+  font-family: "Poppins";
+  font-weight: 800;
+  margin-top: 30px;
+  display: block;
+  font-size: 1.5em;
+}
+
+.container .auth-items .loginpanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 300px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+
+.container .auth-items .loginpanel input {
+  width: 16em;
+  height: 2.8em;
+  background-color: #fdfeff;
+  border: none;
+  border-radius: 3px;
+  margin-top: 18px;
+  display: block;
+  -webkit-box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+          box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding-top: 13px;
+  padding-left: 5px;
+}
+
+.container .auth-items .loginpanel input:focus {
+  outline: none;
+}
+
+.container .auth-items .loginpanel .Name::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 191px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .auth-items .loginpanel .Password::after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 14.26em;
+  border-bottom: 3px solid #619ed5;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  top: 247px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  display: inline;
+}
+
+.container .auth-items .loginpanel span.NameText {
+  position: absolute;
+  top: 170px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .auth-items .loginpanel span.PasswordText {
+  position: absolute;
+  top: 226px;
+  left: 55px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #767676;
+  pointer-events: none;
+}
+
+.container .auth-items .loginpanel input.loginbutton {
+  background-color: transparent;
+  border: solid 2px #619ed5;
+  border-radius: 5px;
+  width: 16em;
+  height: 2.5em;
+  cursor: pointer;
+  font-family: "Poppins";
+  margin-top: 100px;
+  margin-bottom: 74px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 0px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.container .auth-items .loginpanel input.loginbutton:hover {
+  background-color: #619ed5;
+  color: #fdfeff;
+}
+
+.container .auth-items .loginpanel input.loginbutton:active {
+  background-color: #619ed5;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #fdfeff;
+}
+
+.container .auth-items .loginbut {
+  position: absolute;
+  top: 80px;
+  left: 95px;
+  background-color: transparent;
+  border: solid 2px red;
+  border-radius: 5px;
+  width: 10em;
+  height: 3em;
+  cursor: pointer;
+  color: red;
+  font-weight: 300;
+  z-index: 3;
+  display: block;
+  font-weight: 600;
+  -webkit-animation: textmove 5s linear 5s infinite;
+          animation: textmove 5s linear 5s infinite;
+  display: none;
+}
+
+.container .auth-items .loginbut:hover {
+  background-color: red;
+  color: #fdfeff;
+  border: solid 2px red;
+}
+
+.container .auth-items .loginbut:active {
+  background-color: red;
+  color: #fdfeff;
+  border: solid 2px red;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.container .auth-items .switcher1 {
+  display: none;
+}
+
+.loginpanel form div .NameInput:focus + label span.NameText,
+.loginpanel form div .NameInput:valid + label span.NameText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .PasswordInput:focus + label span.PasswordText,
+.loginpanel form div .PasswordInput:valid + label span.PasswordText {
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  font-size: 12px;
+}
+
+.loginpanel form div .NameInput:focus + label.Name::after,
+.loginpanel form div .NameInput:valid + label.Name::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+.loginpanel form div .PasswordInput:focus + label.Password::after,
+.loginpanel form div .PasswordInput:valid + label.Password::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  opacity: 1;
+}
+
+@-webkit-keyframes textmove {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  3% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  6% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  9% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  12% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes textmove {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  3% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  6% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  9% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  12% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .container .auth-items {
+    border-radius: 25px;
+    position: absolute;
+  }
+  .container .auth-items .wrap {
+    display: none;
+  }
+  .container .auth-items .loginbut {
+    display: none;
+  }
+  .container .auth-items .switcher1 {
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 87px;
+    width: 9.8em;
+    height: 3em;
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+    border-radius: 25px 25px 0px 0px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+  }
+  .container .auth-items .switcher1 ::after {
+    content: "Sign Up Now";
+  }
+  .container .auth-items .switcher1:hover {
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+  }
+  .container .auth-items .switcher1:active {
+    background-color: #619ed5;
+    border: solid 2px #fdfeff;
+    color: #fdfeff;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+}
+/*# sourceMappingURL=Login.css.map */
