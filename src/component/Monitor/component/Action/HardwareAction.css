@@ -21,6 +21,143 @@
       flex-wrap: wrap;
 }
 
+.action--container .window--add--container {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 2;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.action--container .window--add--container .overlay--add--container {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+}
+
+.action--container .window--add--container .window--add--box {
+  background-color: white;
+  height: 30em;
+  width: 20em;
+  z-index: 3;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.action--container .window--add--container .window--add--box button {
+  position: absolute;
+  width: 2em;
+  height: 2.5em;
+  color: white;
+  top: 30px;
+  right: -2em;
+  background-color: #e94949;
+  border: solid 2px white;
+  border-style: solid solid solid none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Poppins";
+  border-radius: 0px 10px 10px 0px;
+}
+
+.action--container .window--add--container .window--add--box button:active {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.action--container .window--add--container .window--add--box h2 {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box {
+  height: 90vh;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 2em;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form div .form--add--submit {
+  background-color: #54c254;
+  border: none;
+  border-radius: 2px;
+  width: 10em;
+  height: 2.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form div .form--add--submit:active {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form div span {
+  position: absolute;
+  bottom: 0px;
+}
+
+.action--container .window--add--container .window--add--box .form--add--box form div input {
+  border-style: none none solid none;
+  outline: none;
+}
+
 .action--container .add--button--container {
   width: 100%;
   height: 100%;
