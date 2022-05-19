@@ -1,0 +1,60 @@
+@import "C:/Users/Akaymi/dashboard/src/VariablesMixingFont";
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: $Font;
+    .table--background--boxes {}
+    tbody {}
+    tr {
+        th:nth-child(1) {
+            width: 6%;
+        }
+        th:nth-child(2) {
+            width: 5%;
+        }
+        th:nth-child(3) {
+            width: 31.25%;
+        }
+        th:nth-child(4) {
+            width: 21.25%;
+        }
+        th:nth-child(5) {
+            width: 21.25%;
+        }
+        th:nth-child(6) {
+            width: 10%;
+            img {
+                right: 5px;
+            }
+        }
+        th:nth-child(7) {
+            width: 6%;
+        }
+        th {
+            height: 4em;
+            background-color: rgb(97, 158, 213);
+            border: solid 1px rgb(238, 238, 238);
+            color: white;
+            font-family: $LoginTitle;
+            position: relative;
+            overflow: hidden;
+            img {
+                position: absolute;
+                top: 12px;
+                right: 30px;
+                height: 20px;
+            }
+            div {
+                width: 100%;
+                z-index: 3;
+                border: solid;
+                overflow: hidden;
+                height: 2em;
+                position: relative;
+                input {}
+            }
+        }
+        .Modification {}
+    }
+}

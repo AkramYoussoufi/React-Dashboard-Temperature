@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+table tr th:nth-child(1) {
+  width: 6%;
+}
+
+table tr th:nth-child(2) {
+  width: 5%;
+}
+
+table tr th:nth-child(3) {
+  width: 31.25%;
+}
+
+table tr th:nth-child(4) {
+  width: 21.25%;
+}
+
+table tr th:nth-child(5) {
+  width: 21.25%;
+}
+
+table tr th:nth-child(6) {
+  width: 10%;
+}
+
+table tr th:nth-child(6) img {
+  right: 5px;
+}
+
+table tr th:nth-child(7) {
+  width: 6%;
+}
+
+table tr th {
+  height: 4em;
+  background-color: #619ed5;
+  border: solid 1px #eeeeee;
+  color: white;
+  font-family: "Rajdhani";
+  position: relative;
+  overflow: hidden;
+}
+
+table tr th img {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  height: 20px;
+}
+
+table tr th div {
+  width: 100%;
+  z-index: 3;
+  border: solid;
+  overflow: hidden;
+  height: 2em;
+  position: relative;
+}
+/*# sourceMappingURL=Table.css.map */
