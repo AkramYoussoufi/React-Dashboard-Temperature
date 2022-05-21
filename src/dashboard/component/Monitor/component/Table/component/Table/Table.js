@@ -1,15 +1,24 @@
 import React from "react";
 import "./Table.css";
-import { useTable, useSortBy, useGlobalFilter, useFilters } from "react-table";
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  useFilters,
+  usePagination,
+} from "react-table";
 import { useMemo } from "react";
 import { COLUMNS } from "./COLUMNS";
 import GlobalFilter from "./GlobalFilter";
 import upsort from "./up_sort.png";
 import downsort from "./down_sort.png";
+import nextpage from "./nextpage.svg";
+import prevpage from "./prevpage.svg";
 
 export default function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
   const data = props.sentdata;
+
   // const defaultstatetable = useMemo(() => {
   //   return { Filter: "ColumnFilter" };
   // }, []);
@@ -17,21 +26,27 @@ export default function Table(props) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    page,
     prepareRow,
     state,
     setGlobalFilter,
+    nextPage,
+    previousPage,
   } = useTable(
     { columns, data /*defaultstatetable*/ },
-    useFilters,
     useGlobalFilter,
-    useSortBy
+    useFilters,
+    useSortBy,
+    usePagination
   );
   const { globalFilter } = state;
 
   return (
-    <>
-      <GlobalFilter filter={columns} setFilter={setGlobalFilter} />
+    <div className="the-table">
+      <button className="previouspage" onClick={previousPage}>
+        <img src={prevpage} alt="PrevPage" />
+      </button>
+      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -41,6 +56,8 @@ export default function Table(props) {
                   {columns.render("Header")}
 
                   <img
+                    className="sortingbutton"
+                    style={{ display: columns.isSorted ? "inline" : "none" }}
                     src={
                       columns.isSorted
                         ? columns.isSortedDesc
@@ -50,7 +67,8 @@ export default function Table(props) {
                     }
                     alt=""
                   />
-                  <div>
+
+                  <div className="filter-bar">
                     {columns.canFilter ? columns.render("Filter") : null}
                   </div>
                 </th>
@@ -59,7 +77,7 @@ export default function Table(props) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -72,7 +90,10 @@ export default function Table(props) {
             );
           })}
         </tbody>
-      </table>
-    </>
+      </table>{" "}
+      <button className="nextpage" onClick={nextPage}>
+        <img src={nextpage} alt="NextPage" />
+      </button>
+    </div>
   );
 }

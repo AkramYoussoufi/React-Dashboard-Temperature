@@ -12,7 +12,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: solid 2px;
 }
 
 .table--container .confirm--message {
@@ -132,7 +131,6 @@
   position: relative;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  overflow: auto;
 }
 
 .table--container .table .button--group {
