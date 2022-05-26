@@ -26,8 +26,11 @@
   top: 0px;
   width: 100%;
   height: 100%;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 2;
+  overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -36,19 +39,10 @@
           justify-content: center;
 }
 
-.action--container .window--add--container .overlay--add--container {
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.3;
-}
-
 .action--container .window--add--container .window--add--box {
-  background-color: white;
-  height: 30em;
-  width: 20em;
+  background-color: #619ed5;
+  height: 100%;
+  width: 100%;
   z-index: 3;
   border-radius: 20px;
   display: -webkit-box;
@@ -65,31 +59,37 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  opacity: 1;
 }
 
-.action--container .window--add--container .window--add--box button {
+.action--container .window--add--container .window--add--box button.closewindow {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: transparent;
+  width: auto;
+  height: auto;
   position: absolute;
-  width: 2em;
-  height: 2.5em;
-  color: white;
   top: 30px;
-  right: -2em;
-  background-color: #e94949;
-  border: solid 2px white;
-  border-style: solid solid solid none;
+  right: 50px;
+  border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-family: "Poppins";
-  border-radius: 0px 10px 10px 0px;
 }
 
-.action--container .window--add--container .window--add--box button:active {
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+.action--container .window--add--container .window--add--box button.closewindow img {
+  width: 6em;
+  height: 6em;
 }
 
-.action--container .window--add--container .window--add--box h2 {
-  height: 10vh;
+.action--container .window--add--container .window--add--box h1 {
+  color: #ced9e1;
+}
+
+.action--container .window--add--container .window--add--box div {
+  position: relative;
+  overflow: hidden;
+}
+
+.action--container .window--add--container .window--add--box div form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,63 +99,85 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.action--container .window--add--container .window--add--box .form--add--box {
-  height: 90vh;
-}
-
-.action--container .window--add--container .window--add--box .form--add--box form {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 2em;
-}
-
-.action--container .window--add--container .window--add--box .form--add--box form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 60em;
+  height: 5em;
   position: relative;
 }
 
-.action--container .window--add--container .window--add--box .form--add--box form div .form--add--submit {
-  background-color: #54c254;
-  border: none;
-  border-radius: 2px;
-  width: 10em;
-  height: 2.5em;
-  color: white;
-  cursor: pointer;
+.action--container .window--add--container .window--add--box div form div:nth-child(1) {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
-.action--container .window--add--container .window--add--box .form--add--box form div .form--add--submit:active {
+.action--container .window--add--container .window--add--box div form div:nth-child(2) {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.action--container .window--add--container .window--add--box div form div:nth-child(3) {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.action--container .window--add--container .window--add--box div form div:nth-child(4) {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.action--container .window--add--container .window--add--box div form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  position: absolute;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.action--container .window--add--container .window--add--box div form div label {
+  margin-right: 10px;
+  color: #ced9e1;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.action--container .window--add--container .window--add--box div form div input {
+  background-color: #7cb0db;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  margin-right: 2em;
+}
+
+.action--container .window--add--container .window--add--box button:nth-child(4) {
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  font-weight: 800;
+  background-color: #34648b;
+  border: white solid 1px;
+  color: #ced9e1;
+  cursor: pointer;
+  margin-top: 1.25em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.action--container .window--add--container .window--add--box button:nth-child(4):hover {
+  background-color: transparent;
+}
+
+.action--container .window--add--container .window--add--box button:nth-child(4):active {
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.action--container .window--add--container .window--add--box .form--add--box form div span {
-  position: absolute;
-  bottom: 0px;
-}
-
-.action--container .window--add--container .window--add--box .form--add--box form div input {
-  border-style: none none solid none;
-  outline: none;
 }
 
 .action--container .add--button--container {

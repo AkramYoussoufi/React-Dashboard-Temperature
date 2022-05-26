@@ -15,6 +15,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .the-table .nextpage {
@@ -183,7 +184,7 @@ table thead tr th img.sortingbutton {
 }
 
 table thead tr th:hover .filter-bar {
-  height: 1.5em;
+  height: 1em;
 }
 
 table thead tr th .filter-bar {

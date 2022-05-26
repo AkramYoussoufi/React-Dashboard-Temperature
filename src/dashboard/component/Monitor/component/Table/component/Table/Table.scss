@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
     .nextpage {
         position: absolute;
         right: 0px;
@@ -142,7 +143,7 @@ table {
                     transform: translate(0%, 25%);
                 }
                 &:hover .filter-bar {
-                    height: 1.5em;
+                    height: 1em;
                 }
                 .filter-bar {
                     display: flex;

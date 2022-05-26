@@ -5,34 +5,6 @@ import TableRow from "./component/TableRow/TableRow";
 import Table from "./component/Table/Table";
 
 function Hardwaretable() {
-  //THOSE ARE TABLE VARIABLES.
-
-  // const confirmdelete = function () /* SHOW CONFIRM BOX FOR DELETE ITEMS */ {
-  //   const messagebox = document.querySelector(".confirm--message");
-  //   const delbutt = document.querySelector(".button--group");
-
-  //   if (delbutt.style.cursor === "pointer") {
-  //     if (messagebox.style.display === "flex") {
-  //       messagebox.style.display = "none";
-  //     } else {
-  //       messagebox.style.display = "flex";
-  //     }
-  //   }
-  // };
-
-  // const deleteselecteditems =
-  //   function () /* DELETE SELECTED ITEMS THAT EXISTED IN CHECKED ARRAY CHECKBOX */ {
-  //     const checkedbox = document.querySelectorAll(".checkbox:checked");
-  //     const delbutt = document.querySelector(".button--group");
-  //     const messagebox = document.querySelector(".confirm--message");
-  //     messagebox.style.display = "none";
-  //     for (let i = 0; i <= checkedbox.length; i++) {
-  //       checkedbox[i].parentElement.parentElement.remove();
-  //       delbutt.style.opacity = "0.1";
-  //       delbutt.style.cursor = "not-allowed";
-  //     }
-  //   };
-
   const [row, Setrow] = useState([
     {
       id: 1,
@@ -65,7 +37,7 @@ function Hardwaretable() {
 
   return (
     <div className="table--container">
-      <button
+      {/* {/* <button
         style={{
           position: "absolute",
           bottom: "50%",
@@ -75,9 +47,9 @@ function Hardwaretable() {
           background: "red",
         }}
         onClick={test}
-      >
+      > 
         test
-      </button>
+      </button> */}
       <div className="confirm--message">
         <div className="message--overlay" /*onClick={/*confirmdelete}*/></div>
         <div className="message--box">

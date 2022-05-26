@@ -32,6 +32,8 @@ export default function Table(props) {
     setGlobalFilter,
     nextPage,
     previousPage,
+    canNextPage,
+    canPreviousPage,
   } = useTable(
     { columns, data /*defaultstatetable*/ },
     useGlobalFilter,
@@ -43,7 +45,11 @@ export default function Table(props) {
 
   return (
     <div className="the-table">
-      <button className="previouspage" onClick={previousPage}>
+      <button
+        className="previouspage"
+        onClick={previousPage}
+        style={{ display: canPreviousPage ? "inline" : "none" }}
+      >
         <img src={prevpage} alt="PrevPage" />
       </button>
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
@@ -91,7 +97,11 @@ export default function Table(props) {
           })}
         </tbody>
       </table>{" "}
-      <button className="nextpage" onClick={nextPage}>
+      <button
+        style={{ display: canNextPage ? "inline" : "none" }}
+        className="nextpage"
+        onClick={nextPage}
+      >
         <img src={nextpage} alt="NextPage" />
       </button>
     </div>
