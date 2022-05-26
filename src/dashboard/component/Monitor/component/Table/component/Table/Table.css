@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+.the-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.the-table .nextpage {
+  position: absolute;
+  right: 0px;
+  -webkit-transform: translateX(80%);
+          transform: translateX(80%);
+  height: 6em;
+  width: 6em;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.the-table .nextpage img {
+  width: 100%;
+  height: 100%;
+}
+
+.the-table .previouspage {
+  position: absolute;
+  left: 0px;
+  -webkit-transform: translateX(-80%);
+          transform: translateX(-80%);
+  height: 6em;
+  width: 6em;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.the-table .previouspage img {
+  width: 100%;
+  height: 100%;
+}
+
+div.globalsearchbar {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.globalsearchbar div {
+  cursor: pointer;
+}
+
+div.globalsearchbar div img {
+  margin-top: 0.38em;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+}
+
+div.globalsearchbar div {
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+div.globalsearchbar div input {
+  height: 2.1em;
+  width: 100%;
+  -webkit-transform: translateY(3%);
+          transform: translateY(3%);
+  border: solid #619ed5;
+  outline: none;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+table thead tr th:nth-child(1) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(1) .filter-bar {
+  display: none;
+}
+
+table thead tr th:nth-child(2) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(2) .filter-bar div {
+  width: 3em;
+}
+
+table thead tr th:nth-child(3) {
+  width: 50%;
+}
+
+table thead tr th:nth-child(3) .filter-bar div {
+  width: 10em;
+}
+
+table thead tr th:nth-child(4) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(4) .filter-bar div {
+  width: 10em;
+}
+
+table thead tr th:nth-child(5) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(5) .filter-bar div {
+  width: 3em;
+}
+
+table thead tr th:nth-child(6) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(6) img:nth-child(1) {
+  right: 5px;
+}
+
+table thead tr th:nth-child(6) .filter-bar div {
+  width: 5em;
+}
+
+table thead tr th:nth-child(7) {
+  width: 8%;
+}
+
+table thead tr th:nth-child(7) .filter-bar {
+  display: none;
+}
+
+table thead tr th {
+  height: 4em;
+  background-color: #619ed5;
+  border: solid 1px #eeeeee;
+  color: white;
+  font-family: "Rajdhani";
+  position: relative;
+}
+
+table thead tr th img.sortingbutton {
+  width: 1em;
+  height: 1em;
+  -webkit-transform: translate(0%, 25%);
+          transform: translate(0%, 25%);
+}
+
+table thead tr th:hover .filter-bar {
+  height: 1em;
+}
+
+table thead tr th .filter-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  height: 0em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+table thead tr th .filter-bar div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+table thead tr th .filter-bar div div {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+table thead tr th .filter-bar div div input {
+  display: inline-block;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+table thead tr th .filter-bar div div.searchbuttoncolumn {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  z-index: 100;
+}
+
+table thead tr th .filter-bar div div.searchbuttoncolumn img {
+  width: 1em;
+  height: 1em;
+}
+/*# sourceMappingURL=Table.css.map */

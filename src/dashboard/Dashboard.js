@@ -7,7 +7,7 @@ import Settings from "./component/Settings/Settings";
 
 function Dashboard() {
   const [active, setActive] = useState("Monitor");
-  const username = "Don Fleym";
+  const username = "UserName";
   return (
     <div className="dashboard">
       <div></div>

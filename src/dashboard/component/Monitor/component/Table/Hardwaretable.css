@@ -124,28 +124,13 @@
 }
 
 .table--container .table {
-  display: table;
+  display: block;
   width: 90%;
   height: 90%;
   background-color: white;
   position: relative;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.table--container .table table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  font-family: "Poppins";
-}
-
-.table--container .table table tr th {
-  height: 3em;
-  background-color: #619ed5;
-  border: solid 1px #eeeeee;
-  color: white;
-  font-family: "Rajdhani";
 }
 
 .table--container .table .button--group {

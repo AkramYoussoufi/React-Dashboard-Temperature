@@ -83,29 +83,12 @@
         }
     }
     .table {
-        display: table;
+        display: block;
         width: 90%;
         height: 90%;
         background-color: white;
         position: relative;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-            font-family: $Font;
-            .table--background--boxes {}
-            tr {
-                th {
-                    height: 3em;
-                    background-color: rgb(97, 158, 213);
-                    border: solid 1px rgb(238, 238, 238);
-                    color: white;
-                    font-family: $LoginTitle;
-                }
-                .Modification {}
-            }
-        }
         .button--group {
             width: 15em;
             height: 2.2em;
