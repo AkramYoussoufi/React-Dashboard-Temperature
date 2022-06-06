@@ -15,17 +15,29 @@
   height: 100%;
 }
 
-.chart--container .charts {
+.chart--container .chart-notif {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 80%;
+  width: 70%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+}
+
+.chart--container .chart-unit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
   height: 80%;
   background-color: white;
   border-radius: 10px;

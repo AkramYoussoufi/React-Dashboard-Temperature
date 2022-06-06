@@ -1,15 +1,16 @@
 import "./HardwareAction.css";
 import { useState } from "react";
 import closered from "./closered.png";
+import upbutt from "./up.png";
 
 function HardwareAction() {
-  const [window, Setwindow] = useState({ display: "none" });
+  const [window, Setwindow] = useState({ transform: "translateY(-100%)" });
   const [inputpointer, Setinputpointer] = useState(2);
   const [input1, Setinput1] = useState({});
   const [input2, Setinput2] = useState({});
   const [input3, Setinput3] = useState({});
   const [input4, Setinput4] = useState({});
-  const [addbutton, Setaddbutton] = useState("NEXT");
+  const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
 
   const nextinput = function () {
@@ -40,8 +41,12 @@ function HardwareAction() {
         Setinput2({ transform: "translateX(200%)" });
         Setinput3({ transform: "translateX(200%)" });
         Setinput4({ transform: "translateX(0%)" });
-        Setaddbutton("DONE");
-        Setaddbuttonstyle({ background: "#00AB66", color: "white" });
+        Setaddbutton("Done");
+        Setaddbuttonstyle({
+          background: "#7DC72D",
+          color: "white",
+          border: "none",
+        });
 
         break;
     }
@@ -55,29 +60,29 @@ function HardwareAction() {
           <button
             className="closewindow"
             onClick={() => {
-              Setwindow({ display: "none" });
+              Setwindow({ transform: "translateY(-100%)" });
             }}
           >
-            <img src={closered}></img>
+            <img src={upbutt}></img>
           </button>
           <h1>ADD YOUR SENSOR</h1>
           <div>
             {" "}
             <form>
               <div style={input1}>
-                <label>Sensor</label>
+                <label>Input</label>
                 <input type="text" />
               </div>{" "}
               <div style={input2}>
-                <label>Sensor2</label>
+                <label>Input 2</label>
                 <input type="text" />
               </div>
               <div style={input3}>
-                <label>Sensor3</label>
+                <label>Input 3</label>
                 <input type="text" />
               </div>
               <div style={input4}>
-                <label>Sensor4</label>
+                <label>Input 4</label>
                 <input type="text" />
               </div>
             </form>
@@ -91,7 +96,7 @@ function HardwareAction() {
         <button
           className="add--button"
           onClick={() => {
-            Setwindow({ display: "flex" });
+            Setwindow({ transform: "translateY(0%)" });
           }}
         >
           +

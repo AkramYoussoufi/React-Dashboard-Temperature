@@ -37,6 +37,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .action--container .window--add--container .window--add--box {
@@ -69,19 +71,24 @@
   width: auto;
   height: auto;
   position: absolute;
-  top: 30px;
-  right: 50px;
+  bottom: 30px;
   border: none;
   cursor: pointer;
 }
 
 .action--container .window--add--container .window--add--box button.closewindow img {
-  width: 6em;
-  height: 6em;
+  width: 10em;
+  height: 5em;
+  -webkit-animation-name: folowup;
+          animation-name: folowup;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .action--container .window--add--container .window--add--box h1 {
-  color: #ced9e1;
+  color: white;
 }
 
 .action--container .window--add--container .window--add--box div {
@@ -142,7 +149,7 @@
 
 .action--container .window--add--container .window--add--box div form div label {
   margin-right: 10px;
-  color: #ced9e1;
+  color: white;
   font-size: 1.5em;
   font-weight: 600;
 }
@@ -153,26 +160,31 @@
   outline: none;
   color: white;
   font-size: 3em;
+  font-weight: 300;
   text-align: center;
   margin-right: 2em;
+  border-radius: 50px;
 }
 
 .action--container .window--add--container .window--add--box button:nth-child(4) {
   border-radius: 50%;
-  height: 5em;
-  width: 5em;
-  font-weight: 800;
-  background-color: #34648b;
+  height: 4em;
+  width: 4em;
+  font-weight: 600;
+  background-color: transparent;
   border: white solid 1px;
   color: #ced9e1;
   cursor: pointer;
   margin-top: 1.25em;
+  -webkit-transform: translate(610%, -156%);
+          transform: translate(610%, -156%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .action--container .window--add--container .window--add--box button:nth-child(4):hover {
-  background-color: transparent;
+  background-color: white;
+  color: #619ed5;
 }
 
 .action--container .window--add--container .window--add--box button:nth-child(4):active {
@@ -240,5 +252,35 @@
   position: absolute;
   left: -70px;
   top: -10px;
+}
+
+@-webkit-keyframes folowup {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes folowup {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 /*# sourceMappingURL=HardwareAction.css.map */

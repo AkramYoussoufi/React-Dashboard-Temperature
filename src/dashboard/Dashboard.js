@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 import Monitor from "./component/Monitor/Monitor";
-import Colibration from "./component/Colibration/Colibration";
 import Deviations from "./component/Deviations/Deviations";
 import Settings from "./component/Settings/Settings";
 
@@ -20,7 +19,6 @@ function Dashboard() {
         </div>
         <div className="navbar--list">
           <button onClick={() => setActive("Monitor")}>Monitor</button>
-          <button onClick={() => setActive("Colibration")}>Colibration</button>
           <button onClick={() => setActive("Deviations")}>Deviations</button>
           <button onClick={() => setActive("Settings")}>Settings</button>
         </div>
@@ -50,7 +48,6 @@ function Dashboard() {
         {/* they gonna work as long as u make specified divs and not general ones because it control them all*/}
         <div>
           {active === "Monitor" && <Monitor />}
-          {active === "Colibration" && <Colibration />}
           {active === "Deviations" && <Deviations />}
           {active === "Settings" && <Settings />}
         </div>

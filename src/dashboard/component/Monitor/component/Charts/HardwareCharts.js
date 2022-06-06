@@ -3,15 +3,8 @@ import "./HardwareCharts.css";
 function HardwareCharts() {
   return (
     <div className="chart--container">
-      <div className="chart--container">
-        <div className="charts"></div>
-      </div>
-      <div className="chart--container">
-        <div className="charts"></div>
-      </div>
-      <div className="chart--container">
-        <div className="charts"></div>
-      </div>
+      <div className="chart-notif"></div>
+      <div className="chart-unit"></div>
     </div>
   );
 }
