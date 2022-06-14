@@ -1,8 +1,12 @@
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import { useEffect } from "react";
 import "./Logpanel.css";
 
 function Logpanel() {
+  useEffect(() => {
+    document.title = "LogPanel";
+  });
   return (
     <div className="container">
       <div className="auth">

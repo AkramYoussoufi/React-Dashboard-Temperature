@@ -1,192 +1,193 @@
-@import "C:/Users/Akaymi/dashboard/src/VariablesMixingFont";
+@import "D:/1Dev-Projects/FRONT-END-PFE/src/VariablesMixingFont.scss";
 .the-table {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    .nextpage {
-        position: absolute;
-        right: 0px;
-        transform: translateX(80%);
-        height: 6em;
-        width: 6em;
-        overflow: hidden;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        img {
-            width: 100%;
-            height: 100%;
-        }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .nextpage {
+    position: absolute;
+    right: 0px;
+    transform: translateX(80%);
+    height: 6em;
+    width: 6em;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
     }
-    .previouspage {
-        position: absolute;
-        left: 0px;
-        transform: translateX(-80%);
-        height: 6em;
-        width: 6em;
-        overflow: hidden;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        img {
-            width: 100%;
-            height: 100%;
-        }
+  }
+  .previouspage {
+    position: absolute;
+    left: 0px;
+    transform: translateX(-80%);
+    height: 6em;
+    width: 6em;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
     }
+  }
 }
 
 div.globalsearchbar {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    div {
-        cursor: pointer;
-        img {
-            margin-top: 0.38em;
-            width: 2em;
-            height: 2em;
-            margin-right: 0.5em;
-        }
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  div {
+    cursor: pointer;
+    img {
+      margin-top: 0.38em;
+      width: 2em;
+      height: 2em;
+      margin-right: 0.5em;
     }
-    div {
-        overflow: hidden;
-        transition: all 0.3s;
-        input {
-            height: 2.1em;
-            width: 100%;
-            transform: translateY(3%);
-            border: solid $thirdColor;
-            outline: none;
-            text-align: center;
-        }
+  }
+  div {
+    overflow: hidden;
+    transition: all 0.3s;
+    input {
+      height: 2.1em;
+      width: 100%;
+      transform: translateY(3%);
+      border: solid $thirdColor;
+      outline: none;
+      text-align: center;
     }
+  }
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    font-family: $Font;
-    thead {
-        tr {
-            th:nth-child(1) {
-                width: 8%;
-                .filter-bar {
-                    display: none;
-                }
-            }
-            th:nth-child(2) {
-                width: 8%;
-                .filter-bar {
-                    div {
-                        width: 3em;
-                    }
-                }
-            }
-            th:nth-child(3) {
-                width: 50%;
-                .filter-bar {
-                    div {
-                        width: 10em;
-                    }
-                }
-            }
-            th:nth-child(4) {
-                width: 8%;
-                .filter-bar {
-                    div {
-                        width: 10em;
-                    }
-                }
-            }
-            th:nth-child(5) {
-                width: 8%;
-                .filter-bar {
-                    div {
-                        width: 3em;
-                    }
-                }
-            }
-            th:nth-child(6) {
-                width: 8%;
-                img:nth-child(1) {
-                    right: 5px;
-                }
-                .filter-bar {
-                    div {
-                        width: 5em;
-                    }
-                }
-            }
-            th:nth-child(7) {
-                width: 8%;
-                .filter-bar {
-                    display: none;
-                }
-            }
-            th {
-                height: 4em;
-                background-color: rgb(97, 158, 213);
-                border: solid 1px rgb(238, 238, 238);
-                color: white;
-                font-family: $LoginTitle;
-                position: relative;
-                img.sortingbutton {
-                    width: 1em;
-                    height: 1em;
-                    transform: translate(0%, 25%);
-                }
-                &:hover .filter-bar {
-                    height: 1em;
-                }
-                .filter-bar {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: row;
-                    position: relative;
-                    height: 0em;
-                    transition: all 0.3s;
-                    div {
-                        width: 100%;
-                        height: 100%;
-                        overflow: hidden;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        div {
-                            overflow: hidden;
-                            width: 100%;
-                            height: 100%;
-                            transition: all 0.3s;
-                            input {
-                                display: inline-block;
-                                border: none;
-                                text-align: center;
-                                outline: none;
-                            }
-                        }
-                        div.searchbuttoncolumn {
-                            position: relative;
-                            width: 2em;
-                            height: 2em;
-                            cursor: pointer;
-                            z-index: 100;
-                            img {
-                                width: 1em;
-                                height: 1em;
-                            }
-                        }
-                    }
-                }
-            }
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: $Font;
+  thead {
+    tr {
+      th:nth-child(1) {
+        width: 8%;
+        .filter-bar {
+          display: none;
         }
-        .Modification {}
+      }
+      th:nth-child(2) {
+        width: 8%;
+        .filter-bar {
+          div {
+            width: 3em;
+          }
+        }
+      }
+      th:nth-child(3) {
+        width: 50%;
+        .filter-bar {
+          div {
+            width: 10em;
+          }
+        }
+      }
+      th:nth-child(4) {
+        width: 8%;
+        .filter-bar {
+          div {
+            width: 10em;
+          }
+        }
+      }
+      th:nth-child(5) {
+        width: 8%;
+        .filter-bar {
+          div {
+            width: 3em;
+          }
+        }
+      }
+      th:nth-child(6) {
+        width: 8%;
+        img:nth-child(1) {
+          right: 5px;
+        }
+        .filter-bar {
+          div {
+            width: 5em;
+          }
+        }
+      }
+      th:nth-child(7) {
+        width: 8%;
+        .filter-bar {
+          display: none;
+        }
+      }
+      th {
+        height: 4em;
+        background-color: rgb(97, 158, 213);
+        border: solid 1px rgb(238, 238, 238);
+        color: white;
+        font-family: $LoginTitle;
+        position: relative;
+        img.sortingbutton {
+          width: 1em;
+          height: 1em;
+          transform: translate(0%, 25%);
+        }
+        &:hover .filter-bar {
+          height: 1em;
+        }
+        .filter-bar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          position: relative;
+          height: 0em;
+          transition: all 0.3s;
+          div {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            div {
+              overflow: hidden;
+              width: 100%;
+              height: 100%;
+              transition: all 0.3s;
+              input {
+                display: inline-block;
+                border: none;
+                text-align: center;
+                outline: none;
+              }
+            }
+            div.searchbuttoncolumn {
+              position: relative;
+              width: 2em;
+              height: 2em;
+              cursor: pointer;
+              z-index: 100;
+              img {
+                width: 1em;
+                height: 1em;
+              }
+            }
+          }
+        }
+      }
     }
+    .Modification {
+    }
+  }
 }

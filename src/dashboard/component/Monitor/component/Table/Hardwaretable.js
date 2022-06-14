@@ -1,7 +1,6 @@
 import "./Hardwaretable.css";
 import { useState } from "react";
 
-import TableRow from "./component/TableRow/TableRow";
 import Table from "./component/Table/Table";
 
 function Hardwaretable() {

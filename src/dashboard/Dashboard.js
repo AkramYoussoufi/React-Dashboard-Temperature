@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import Monitor from "./component/Monitor/Monitor";
 import Deviations from "./component/Deviations/Deviations";
 import Settings from "./component/Settings/Settings";
+import { Link, Routes, Route, useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  useEffect(() => {
+    document.title = "Dashboard";
+  });
+  const navigate = useNavigate();
+  const accesToken = true;
+
   const [active, setActive] = useState("Monitor");
   const username = "UserName";
+
   return (
     <div className="dashboard">
       <div></div>
