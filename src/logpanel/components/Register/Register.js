@@ -76,7 +76,6 @@ const EMAIL_REGEX =
   /^[a-zA-Z0-9-_.]{2,23}[@][a-zA-Z]([a-zA-Z0-9-_]{0,15})[.][a-zA-z]{2,5}$/;
 
 function Register() {
-  const userRef = useRef();
   const errRefreg = useRef();
 
   const [user, setUser] = useState("");
@@ -101,7 +100,7 @@ function Register() {
   useEffect(() => {
     const result = USER_REGEX.test(user);
     setValidName(result);
-    if (!result && !user == "") {
+    if (!result && user !== "") {
       setErrMsgreg({
         active: true,
         message:
@@ -117,7 +116,7 @@ function Register() {
     setValidPasswordreg(result);
     const match = passwordReg === matchPasswordreg;
     setValidMatchreg(match);
-    if (!result && !passwordReg == "") {
+    if (!result && passwordReg !== "") {
       setErrMsgreg({
         active: true,
         message: "Your password is too weak.",
@@ -125,8 +124,8 @@ function Register() {
     } else if (
       result &&
       !match &&
-      !passwordReg == "" &&
-      !matchPasswordreg == ""
+      passwordReg !== "" &&
+      matchPasswordreg !== ""
     ) {
       setErrMsgreg({
         active: true,
@@ -141,10 +140,10 @@ function Register() {
 
     setValidEmailreg(result);
 
-    if (!result && !emailreg == "") {
+    if (!result && emailreg !== "") {
       setErrMsgreg({
         active: true,
-        message: "Your email must include a valid Adresse Email",
+        message: "Your email must include a valid Email Adresse",
       });
     } else {
       setErrMsgreg({ active: false });
@@ -163,31 +162,32 @@ function Register() {
     e.preventDefault();
     try {
       let date = new Date();
-      const response = await axios.post(
-        REGISTER_URL,
-        {
-          email: emailreg,
-          username: user,
-          password: passwordReg,
-          confirmedPassword: matchPasswordreg,
-        },
-        {
-          header: {
-            "Content-Type": "application/json",
-            date: date.getDate(),
-            Accept: "application/json",
-            server: "Microsoft-IIS/10.0 ",
-            xpoweredby: "ASP.NET ",
+      if (allValid) {
+        const response = await axios.post(
+          REGISTER_URL,
+          {
+            email: emailreg,
+            username: user,
+            password: passwordReg,
+            confirmedPassword: matchPasswordreg,
           },
-        }
-      );
-      console.log(JSON.stringify(response));
-      setEmailReg("");
-      setMatchPasswordreg("");
-      setPasswordreg("");
-      setUser("");
-      setSuccess(true);
-      console.log("worked");
+          {
+            header: {
+              "Content-Type": "application/json",
+              date: date.getDate(),
+              Accept: "application/json",
+              server: "Microsoft-IIS/10.0 ",
+              xpoweredby: "ASP.NET ",
+            },
+          }
+        );
+        console.log(JSON.stringify(response));
+        setEmailReg("");
+        setMatchPasswordreg("");
+        setPasswordreg("");
+        setUser("");
+        setSuccess(true);
+      }
     } catch (err) {
       setErrMsgreg({
         message: "Something went Wrong",
@@ -233,6 +233,7 @@ function Register() {
               onChange={(e) => {
                 setUser(e.target.value);
               }}
+              value={user}
               required
             ></input>
             <label className="NameReg" htmlFor="usernamereg">
@@ -261,6 +262,7 @@ function Register() {
               id="passwordReg"
               name="passwordReg"
               autoComplete="off"
+              value={passwordReg}
               onChange={(e) => {
                 setPasswordreg(e.target.value);
               }}
@@ -292,6 +294,7 @@ function Register() {
               type="password"
               id="repasswordreg"
               name="repasswordreg"
+              value={matchPasswordreg}
               autoComplete="off"
               onChange={(e) => {
                 setMatchPasswordreg(e.target.value);
@@ -325,6 +328,7 @@ function Register() {
               id="regemail"
               name="regemail"
               className="Email"
+              value={emailreg}
               autoComplete="off"
               onChange={(e) => {
                 setEmailReg(e.target.value);

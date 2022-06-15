@@ -1,8 +1,9 @@
 import "./Login.css";
-import { useRef, useState, useEffect, useContext } from "react";
+import { useRef, useState, useEffect } from "react";
 import AuthContext from "../../../context/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../../api/axios";
+import useAuth from "../../../hooks/useAuth";
 
 //THIS IS NATIVE JS FOR THE ANIMATIONS
 const showhide1 = function () {
@@ -42,7 +43,7 @@ const EMAIL_REGEX =
 const PWD_REGEX = /^.{8,24}$/;
 
 function Login() {
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useAuth();
   const emailRef = useRef();
   const errRef = useRef();
 
@@ -50,48 +51,59 @@ function Login() {
   const [validEmail, setValidEmail] = useState(false);
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
+  const [allValid, setAllvalid] = useState(false);
   const [errMsg, setErrMsg] = useState({ message: "", active: false });
-  const [succes, setSuccess] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     const result = EMAIL_REGEX.test(email);
     const result2 = PWD_REGEX.test(password);
     setValidEmail(result);
     setValidPassword(result2);
+    if (result && result2) {
+      setAllvalid(true);
+    } else {
+      setAllvalid(false);
+    }
   }, [email, password]);
 
-  const handleSubmit = async (e) => {
+  const submitHandlerLog = async (e) => {
     //setErrMsg({ active: true, message: "loading" }); EXAMPLE OF LOADING SCREEN
     e.preventDefault();
+
     try {
       let date = new Date();
 
-      const response = await axios.post(
-        LOGIN_URL,
-        {
-          email,
-          password,
-        },
-        {
-          header: {
-            "Content-Type": "application/json",
-            date: date.getDate(),
-            Accept: "application/json",
-            server: "Microsoft-IIS/10.0 ",
-            xpoweredby: "ASP.NET ",
+      if (validEmail && validPassword) {
+        const response = await axios.post(
+          LOGIN_URL,
+          {
+            email,
+            password,
           },
-        }
-      );
-      console.log(JSON.stringify(response?.data));
-      const accesToken = response?.data?.token;
-      const user = response?.data?.userName;
-      setAuth({ user, accesToken });
-      setEmail("");
-      setPassword("");
-      setSuccess(true);
-      navigate("/Dashboard");
+          {
+            header: {
+              "Content-Type": "application/json",
+              date: date.getDate(),
+              Accept: "application/json",
+              server: "Microsoft-IIS/10.0 ",
+              xpoweredby: "ASP.NET ",
+            },
+          }
+        );
+        console.log(response?.data);
+        const accesToken = response?.data?.token;
+        const user = response?.data?.user.userName;
+        setAuth({ user, accesToken });
+        setEmail("");
+        setPassword("");
+        navigate(from, { replace: true });
+      } else {
+        setErrMsg({ active: true, message: "Nice try" });
+      }
     } catch (err) {
       if (err.response.status === 400) {
         setErrMsg({
@@ -133,7 +145,7 @@ function Login() {
         <div className="Msg">{errMsg.message}</div>
       </div>{" "}
       <div className="loginpanel">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submitHandlerLog}>
           <div>
             <input
               type="text"
@@ -166,11 +178,9 @@ function Login() {
                 className="loginbutton"
                 type="submit"
                 value="Log In"
-                disabled={
-                  email == "" && password == "" && !validEmail && !validPassword
-                }
+                disabled={email && password && !allValid}
                 style={
-                  !email == "" && !password == "" && validEmail && validPassword
+                  email !== "" && password !== "" && allValid
                     ? { cursor: "pointer", opacity: "1" }
                     : {
                         opacity: "0.5",

@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
 import Monitor from "./component/Monitor/Monitor";
 import Deviations from "./component/Deviations/Deviations";
 import Settings from "./component/Settings/Settings";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const { auth, setAuth } = useAuth();
   useEffect(() => {
     document.title = "Dashboard";
   });
@@ -13,7 +15,7 @@ function Dashboard() {
   const accesToken = true;
 
   const [active, setActive] = useState("Monitor");
-  const username = "UserName";
+  const username = auth.user;
 
   return (
     <div className="dashboard">
@@ -41,7 +43,14 @@ function Dashboard() {
                     <button>Account Management</button>
                   </div>
                   <div>
-                    <button className="Logoutbutton">Logout</button>
+                    <button
+                      className="Logoutbutton"
+                      onClick={() => {
+                        setAuth({ user: "" });
+                      }}
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
               </div>
