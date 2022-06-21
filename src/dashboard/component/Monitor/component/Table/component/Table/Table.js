@@ -1,15 +1,8 @@
 import React from "react";
 import "./Table.css";
-import {
-  useTable,
-  useSortBy,
-  useGlobalFilter,
-  useFilters,
-  usePagination,
-} from "react-table";
+import { useTable, useSortBy, useFilters, usePagination } from "react-table";
 import { useMemo } from "react";
 import { COLUMNS } from "./COLUMNS";
-import GlobalFilter from "./GlobalFilter";
 import upsort from "./up_sort.png";
 import downsort from "./down_sort.png";
 import nextpage from "./nextpage.svg";
@@ -29,19 +22,16 @@ export default function Table(props) {
     page,
     prepareRow,
     state,
-    setGlobalFilter,
     nextPage,
     previousPage,
     canNextPage,
     canPreviousPage,
   } = useTable(
     { columns, data /*defaultstatetable*/ },
-    useGlobalFilter,
     useFilters,
     useSortBy,
     usePagination
   );
-  const { globalFilter } = state;
 
   return (
     <div className="the-table">
@@ -52,7 +42,6 @@ export default function Table(props) {
       >
         <img src={prevpage} alt="PrevPage" />
       </button>
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (

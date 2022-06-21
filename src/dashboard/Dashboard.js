@@ -46,7 +46,8 @@ function Dashboard() {
                     <button
                       className="Logoutbutton"
                       onClick={() => {
-                        setAuth({ user: "" });
+                        sessionStorage.clear();
+                        navigate("/join");
                       }}
                     >
                       Logout

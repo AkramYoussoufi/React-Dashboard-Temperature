@@ -20,7 +20,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #619ed5;
+  background-color: #98c1d9;
   position: fixed;
   height: 7vh;
   width: 100%;
@@ -75,7 +75,7 @@
 .navbar--column .navbar--list button {
   height: 100%;
   width: 100%;
-  background-color: #619ed5;
+  background-color: #98c1d9;
   color: rgba(255, 255, 255, 0.87);
   border: none;
   -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -225,16 +225,30 @@
   width: 100%;
 }
 
-.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow {
+.navbar--column
+.username--title
+.username--login--panel:hover
+.login--username
+.login--arrow {
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
 }
 
-.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow .user--panel {
+.navbar--column
+.username--title
+.username--login--panel:hover
+.login--username
+.login--arrow
+.user--panel {
   display: block;
 }
 
-.navbar--column .username--title .username--login--panel:hover .login--username .login--arrow .user--panel:hover {
+.navbar--column
+.username--title
+.username--login--panel:hover
+.login--username
+.login--arrow
+.user--panel:hover {
   display: block;
 }
 /*# sourceMappingURL=Dashboard.css.map */

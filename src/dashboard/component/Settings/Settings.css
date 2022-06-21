@@ -1,1 +1,129 @@
-/* No CSS *//*# sourceMappingURL=Settings.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+.settings-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  height: 93vh;
+  width: 100vw;
+}
+
+.settings-content .settings-content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.settings-content .settings-content-container .settings-side-bar {
+  height: 90%;
+  width: 20%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.settings-content .settings-content-container .settings-side-bar .side-bar-header {
+  height: 10%;
+  width: 100%;
+  background-color: #635666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 50px;
+  color: white;
+  font-size: 1.1em;
+  position: relative;
+  border-right: 1px #eeeeee solid;
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+
+.settings-content .settings-content-container .settings-side-bar .side-bar-header .button-add-sensor {
+  position: absolute;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  right: 10px;
+  width: 3.5em;
+  height: 3.5em;
+  background-color: transparent;
+  border: none;
+}
+
+.settings-content .settings-content-container .settings-side-bar .side-bar-header .button-add-sensor img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.settings-content .settings-content-container .settings-side-bar .side-bar-sensors {
+  height: 90%;
+  width: 100%;
+  border-right: 1px #eeeeee solid;
+}
+
+.settings-content .settings-content-container .settings-options {
+  height: 90%;
+  width: 70%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.settings-content .settings-content-container .settings-options .options-header {
+  height: 10%;
+  width: 100%;
+  background-color: #635666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 1.1em;
+  padding-left: 50px;
+  font-weight: 900;
+  font-family: "Open Sans";
+}
+
+.settings-content .settings-content-container .settings-options .options-sensors {
+  height: 90%;
+  width: 100%;
+}
+/*# sourceMappingURL=Settings.css.map */

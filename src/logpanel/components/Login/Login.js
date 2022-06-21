@@ -94,13 +94,18 @@ function Login() {
             },
           }
         );
-        console.log(response?.data);
-        const accesToken = response?.data?.token;
-        const user = response?.data?.user.userName;
-        setAuth({ user, accesToken });
+        console.log(response?.data.result);
+        const accesToken = response?.data?.result.token;
+        const user = response?.data?.result.user.userName;
+        sessionStorage.setItem("userName", user);
+        sessionStorage.setItem("userToken", accesToken);
+        setAuth({
+          user: sessionStorage.userName,
+          token: sessionStorage.userToken,
+        });
         setEmail("");
         setPassword("");
-        navigate(from, { replace: true });
+        navigate("/Dashboard");
       } else {
         setErrMsg({ active: true, message: "Nice try" });
       }

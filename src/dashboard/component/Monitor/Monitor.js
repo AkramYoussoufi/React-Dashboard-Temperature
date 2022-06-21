@@ -1,5 +1,4 @@
 import "./Monitor.css";
-import HardwareAction from "./component/Action/HardwareAction";
 import HardwareCharts from "./component/Charts/HardwareCharts";
 import Hardwaretable from "./component/Table/Hardwaretable";
 
@@ -14,9 +13,7 @@ function Monitor() {
       <div className="dashboard--content--charts">
         <HardwareCharts />
       </div>
-      <div className="dashboard--content--actions">
-        <HardwareAction />
-      </div>
+
       <div className="dashboard--content--table">
         <Hardwaretable />
       </div>

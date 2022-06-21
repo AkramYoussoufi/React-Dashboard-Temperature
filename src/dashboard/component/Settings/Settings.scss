@@ -1,0 +1,87 @@
+@import "D:/1Dev-Projects/FRONT-END-PFE/src/VariablesMixingFont";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+.settings-content {
+  display: grid;
+  grid-template-columns: 100%;
+  height: 93vh;
+  width: 100vw;
+  .settings-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    .settings-side-bar {
+      height: 90%;
+      width: 20%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 10px 0px 0px 10px;
+      .side-bar-header {
+        height: 10%;
+        width: 100%;
+        background-color: #635666;
+        display: flex;
+        align-items: center;
+        padding-left: 50px;
+        color: white;
+        font-size: 1.1em;
+        position: relative;
+        border-right: 1px #eeeeee solid;
+        font-weight: 600;
+        font-family: "Open Sans";
+        .button-add-sensor {
+          position: absolute;
+          transform: translateY(0%);
+          right: 10px;
+          width: 3.5em;
+          height: 3.5em;
+          background-color: transparent;
+          border: none;
+          img {
+            width: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+      .side-bar-sensors {
+        height: 90%;
+        width: 100%;
+        border-right: 1px #eeeeee solid;
+      }
+    }
+    .settings-options {
+      height: 90%;
+      width: 70%;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      background-color: white;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 0px 10px 10px 0px;
+
+      .options-header {
+        height: 10%;
+        width: 100%;
+        background-color: #635666;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 1.1em;
+        padding-left: 50px;
+        font-weight: 900;
+        font-family: "Open Sans";
+      }
+      .options-sensors {
+        height: 90%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -11,37 +11,74 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  width: 92%;
   height: 100%;
 }
 
-.chart--container .chart-notif {
+.chart--container .chart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
-  height: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  width: 32.5%;
+  height: 85%;
   background-color: white;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+  position: relative;
 }
 
-.chart--container .chart-unit {
+.chart--container .sensor-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
-  height: 80%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 60%;
+  height: 85%;
   background-color: white;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+  color: gray;
+  font-size: 12px;
+}
+
+.chart--container .sensor-details .box-text1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 45%;
+  height: 100%;
+}
+
+.chart--container .sensor-details .box-text2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 45%;
+  height: 100%;
 }
 /*# sourceMappingURL=HardwareCharts.css.map */
