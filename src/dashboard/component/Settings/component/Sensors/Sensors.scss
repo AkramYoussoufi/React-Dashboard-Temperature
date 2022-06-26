@@ -1,0 +1,14 @@
+.sensorlist {
+  border-bottom: solid 1px #eeeeee;
+  width: 100%;
+  height: 1.9em;
+  list-style-type: none;
+  cursor: pointer;
+  text-align: center;
+  transform: translateY(0%);
+  font-weight: 500;
+  font-size: 0.9em;
+  &:hover {
+    background-color: #eeeeee;
+  }
+}

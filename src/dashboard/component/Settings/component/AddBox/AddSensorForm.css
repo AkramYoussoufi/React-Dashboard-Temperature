@@ -1,0 +1,314 @@
+.AddSensorForm {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 101%;
+  background-color: #eeeeee;
+  z-index: 2;
+  -webkit-transition: all;
+  transition: all;
+}
+
+.AddSensorForm .AddSensorFormContainer {
+  width: 100%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo {
+  width: 30em;
+  height: 30em;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #619ed5;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .title-left-side {
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 900;
+  font-size: 2em;
+  color: white;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer {
+  height: 80%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  padding-left: 3em;
+  position: relative;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .title {
+  font-weight: 300;
+  font-size: 1.5em;
+  height: 10%;
+  font-weight: 600;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .infotext {
+  font-weight: 300;
+  font-size: 0.95em;
+  height: 60%;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .infotext .inputlistcontroler {
+  width: 50%;
+  max-height: 40%;
+  overflow: auto;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .leave--btn--addsensor {
+  width: 100%;
+  height: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 40px;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .leave--btn--addsensor button {
+  color: white;
+  width: 15em;
+  height: 3em;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  border: solid white;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInfo .infocontainer .leave--btn--addsensor button:hover {
+  background-color: white;
+  color: #619ed5;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput {
+  width: 30em;
+  height: 30em;
+  border-radius: 0px 10px 10px 0px;
+  background-color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--title {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2em;
+  font-weight: 900;
+  color: #619ed5;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .selectinput {
+  padding-bottom: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20em;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .selectinput div:nth-child(1) label {
+  font-weight: 600;
+  color: black;
+  width: auto;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .selectinput div:nth-child(2) {
+  position: relative;
+  width: 10em;
+  height: 2em;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .selectinput div:nth-child(2) select {
+  width: 13em;
+  height: 2.5em;
+  border: solid 1px #eeeeee;
+  position: absolute;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .sensornameinput {
+  padding-bottom: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20em;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .sensornameinput div:nth-child(1) label {
+  font-weight: 600;
+  color: black;
+  width: auto;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .sensornameinput input {
+  outline: none;
+  border: solid 1px #eeeeee;
+  width: 14em;
+  height: 2.5em;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .button--add--sensor {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .button--add--sensor input {
+  width: 20em;
+  height: 3.5em;
+  background-color: transparent;
+  border: #619ed5 solid 3px;
+  color: #619ed5;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.AddSensorForm .AddSensorFormContainer .formInput .formInput--form form .button--add--sensor input:hover {
+  background-color: #619ed5;
+  color: white;
+}
+/*# sourceMappingURL=AddSensorForm.css.map */
