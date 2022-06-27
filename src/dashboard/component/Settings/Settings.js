@@ -1,7 +1,6 @@
 import "./Settings.css";
-import plus from "./add.png";
 import Sensors from "./component/Sensors/Sensors";
-import AddSensorForm from "./component/AddBox/AddSensorForm";
+import AlarmProfile from "./component/AlarmProfile/AlarmProfile";
 import { useState } from "react";
 
 function Settings() {
@@ -11,23 +10,17 @@ function Settings() {
       <div className="settings-content-container">
         <div className="addbox" style={showForm}>
           {" "}
-          <AddSensorForm setShowForm={setShowForm} />
         </div>
         <div className="settings-side-bar">
           <div className="side-bar-header">
-            <div>Sensors</div>
-            <button
-              className="button-add-sensor"
-              onClick={() => {
-                setShowForm({ display: "block" });
-              }}
-            >
-              <img src={plus}></img>
-            </button>
+            <div>Sensors & Alarm Profile</div>
           </div>
           <div className="side-bar-sensors">
             <ul>
+              <div className="list--title">Sensors</div>
               <Sensors />
+              <div className="list--title">Alarm Profile</div>
+              <AlarmProfile />
             </ul>
           </div>
         </div>

@@ -3,10 +3,17 @@
   width: 100vw;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 35% 12% 50%;
 }
 
 .dashboard--content--charts {
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dashboard--add--sensor {
   display: flex;
   height: 100%;
   justify-content: space-around;

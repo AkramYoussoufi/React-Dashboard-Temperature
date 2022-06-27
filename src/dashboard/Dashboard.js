@@ -29,7 +29,7 @@ function Dashboard() {
         </div>
         <div className="navbar--list">
           <button onClick={() => setActive("Monitor")}>Monitor</button>
-          <button onClick={() => setActive("Deviations")}>Deviations</button>
+          <button onClick={() => setActive("Deviations")}>Alarm</button>
           <button onClick={() => setActive("Settings")}>Settings</button>
         </div>
         <div className="username--title">

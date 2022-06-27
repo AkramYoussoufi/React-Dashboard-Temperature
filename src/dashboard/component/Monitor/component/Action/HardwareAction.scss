@@ -1,0 +1,333 @@
+@import "D:/1Dev-Projects/FRONT-END-PFE/src/VariablesMixingFont.scss";
+.action--container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  .window--add--container {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+    overflow: hidden;
+    @include center();
+    transition: all 1s;
+    flex-direction: row;
+    background-color: $thirdColor;
+    .side-info-add-sensor {
+      width: 25em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .infocontainer {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        padding-left: 3em;
+        position: relative;
+        align-items: center;
+        .title {
+          font-weight: 300;
+          font-size: 1.8em;
+          height: 10%;
+          font-weight: 600;
+          color: white;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-right: 6em;
+        }
+        .infotext {
+          font-weight: 300;
+          font-size: 0.95em;
+          height: 18em;
+
+          .inputlistcontroler {
+            width: 50%;
+            height: 11em;
+            overflow: auto;
+            .inputlist {
+            }
+          }
+        }
+        .leave--btn--addsensor {
+          width: 100%;
+          height: 0em;
+          display: flex;
+          padding-right: 40px;
+          button {
+            color: white;
+            width: 8em;
+            height: 3em;
+            background-color: red;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1em;
+            border: solid red;
+            margin-top: 20px;
+            &:hover {
+            }
+          }
+        }
+      }
+    }
+    .window--add--box {
+      height: 100%;
+      width: 40em;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      opacity: 1;
+      button.closewindow {
+        object-fit: contain;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+        position: absolute;
+        bottom: 30px;
+
+        border: none;
+        cursor: pointer;
+        img {
+          width: 10em;
+          height: 5em;
+          animation-name: folowup;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+        }
+      }
+      h1 {
+        color: white;
+        height: 30px;
+        font-weight: 600;
+      }
+      .form-add-sensor {
+        position: relative;
+        width: 80%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: solid 2px #eeeeee;
+        form {
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          .add-alarm-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            position: absolute;
+            transition: all 1s;
+            transform: translateX(0%);
+            flex-direction: column;
+            height: 10em;
+            .errMsg--alarm {
+              width: 90%;
+              height: 100%;
+              position: relative;
+              .msgbackground {
+                background-color: red;
+                position: absolute;
+                opacity: 0.5;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+              }
+              .message {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                z-index: 1;
+                padding: 5px;
+              }
+            }
+            .alarm-name-input-box {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              div span {
+                color: white;
+                font-weight: 600;
+                margin-right: 10px;
+              }
+            }
+            label {
+              color: white;
+              font-weight: 600;
+            }
+            input {
+              background-color: #7cb0db;
+              border: none;
+              outline: none;
+              height: 2em;
+              margin: 10px;
+              color: white;
+            }
+            input.upperlower--input {
+              width: 2em;
+            }
+            select {
+              background-color: #7cb0db;
+              border: none;
+              outline: none;
+              height: 2em;
+              margin: 10px;
+              color: white;
+            }
+          }
+          .add-sensor-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            position: absolute;
+            transition: all 1s;
+            transform: translateX(-200%);
+            flex-direction: column;
+            .errMsg--alarm {
+              width: 90%;
+              height: 100%;
+              position: relative;
+              .msgbackground {
+                background-color: red;
+                position: absolute;
+                opacity: 0.5;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+              }
+              .message {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                z-index: 1;
+                padding: 5px;
+              }
+            }
+            label {
+              color: white;
+              font-weight: 600;
+            }
+            input {
+              background-color: #7cb0db;
+              border: none;
+              outline: none;
+              height: 2em;
+              margin: 10px;
+              color: white;
+            }
+            select {
+              background-color: #7cb0db;
+              border: none;
+              outline: none;
+              height: 2em;
+              margin: 10px;
+              color: white;
+            }
+          }
+        }
+      }
+      .button--next {
+        width: 10em;
+        height: 3.7em;
+        border: solid 3px white;
+        color: white;
+        font-weight: 600;
+        background-color: transparent;
+        z-index: 5;
+        margin-left: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+          color: #619ed5;
+        }
+      }
+    }
+  }
+  .add--button--container {
+    //container 1
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    @include center();
+    .add--button {
+      width: 2em;
+      height: auto;
+      font-size: 12em;
+      z-index: 0;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: rgb(156, 154, 154);
+      position: relative;
+      font-family: $Font;
+      .arrow {
+        width: 100px;
+        border-bottom: solid 2px;
+        border-radius: 0% 0% 0% 80%;
+        height: 50px;
+        border-color: #9c9a9a;
+        position: relative;
+        position: absolute;
+        top: 93px;
+        left: 20px;
+        font-size: 15px;
+        font-family: $LoginTitle;
+        .point {
+          position: absolute;
+          border: solid 2px;
+          width: 0;
+          height: 0;
+          right: -20px;
+          bottom: -10px;
+          border-left: 10px solid #9c9a9a;
+          border-right: 10px solid transparent;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+        .message {
+          color: #9c9a9a;
+          position: absolute;
+          left: -70px;
+          top: -10px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes folowup {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

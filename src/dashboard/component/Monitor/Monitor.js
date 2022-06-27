@@ -1,6 +1,7 @@
 import "./Monitor.css";
 import HardwareCharts from "./component/Charts/HardwareCharts";
 import Hardwaretable from "./component/Table/Hardwaretable";
+import HardwareAction from "./component/Action/HardwareAction";
 
 /* ADD HARDWARE LIST SORTER AND HARDWARE LIST ADDED TO SEPARATE COMPONENET
 AND IT MUST BE A TABLE
@@ -13,7 +14,9 @@ function Monitor() {
       <div className="dashboard--content--charts">
         <HardwareCharts />
       </div>
-
+      <div className="dashboard--add--sensor">
+        <HardwareAction />
+      </div>
       <div className="dashboard--content--table">
         <Hardwaretable />
       </div>

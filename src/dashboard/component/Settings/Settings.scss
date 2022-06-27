@@ -31,7 +31,7 @@
       .side-bar-header {
         height: 10%;
         width: 100%;
-        background-color: red;
+        background-color: #619ed5;
         display: flex;
         align-items: center;
         padding-left: 50px;
@@ -41,19 +41,6 @@
         border-right: 1px #eeeeee solid;
         font-weight: 600;
         font-family: "Open Sans";
-        .button-add-sensor {
-          position: absolute;
-          transform: translateY(0%);
-          right: 10px;
-          width: 3.5em;
-          height: 3.5em;
-          background-color: transparent;
-          border: none;
-          img {
-            width: 100%;
-            cursor: pointer;
-          }
-        }
       }
       .side-bar-sensors {
         height: 100%;
@@ -63,12 +50,23 @@
         justify-content: space-between;
         ul {
           width: 100%;
+          height: 100%;
           margin: 0;
           padding: 0;
           height: 100%;
           display: flex;
           align-items: center;
           flex-direction: column;
+          .list--title {
+            height: 3em;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #424f5a;
+            color: white;
+            pointer-events: none;
+          }
         }
       }
     }
@@ -86,7 +84,7 @@
       .options-header {
         height: 9%;
         width: 100%;
-        background-color: red;
+        background-color: #619ed5;
         display: flex;
         align-items: center;
         color: white;
