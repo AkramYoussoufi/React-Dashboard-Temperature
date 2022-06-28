@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,aAAa,EAAE,iBAAiB;EAChC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,eAAe,EAAE,IAAI;EACrB,MAAM,EAAE,OAAO;EACf,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,cAAc;EACzB,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,KAAK;EAChB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAIxB;;AAhBD,AAaE,WAbS,AAaR,MAAM,CAAC;EACN,gBAAgB,EAAE,OAAO;CAC1B",
     "sources": [
-        "Sensors.scss"
+        "AlarmProfile.scss"
     ],
     "names": [],
-    "file": "Sensors.css"
+    "file": "AlarmProfile.css"
 }

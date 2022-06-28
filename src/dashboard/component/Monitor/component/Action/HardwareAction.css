@@ -103,13 +103,37 @@
 .action--container .window--add--container .side-info-add-sensor .infocontainer .infotext {
   font-weight: 300;
   font-size: 0.95em;
-  height: 18em;
+  height: auto;
 }
 
 .action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler {
   width: 50%;
-  height: 11em;
+  height: auto;
   overflow: auto;
+}
+
+.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist {
+  list-style-type: none;
+}
+
+.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist .cercle-red {
+  border: solid 1px #E83816;
+  background-color: #e83816;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist .cercle-green {
+  border: solid 1px #6cdb04;
+  background-color: #6cdb04;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  display: inline-block;
 }
 
 .action--container .window--add--container .side-info-add-sensor .infocontainer .leave--btn--addsensor {

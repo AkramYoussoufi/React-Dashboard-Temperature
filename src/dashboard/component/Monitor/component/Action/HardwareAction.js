@@ -1,15 +1,20 @@
 import "./HardwareAction.css";
 import { useState } from "react";
-import closered from "./closered.png";
-import upbutt from "./up.png";
+import axios from "../../../../../api/axios";
+import useAuth from "../../../../../hooks/useAuth";
 
 function HardwareAction() {
+  //VARIABLES FOR ANIMATIONS
   const [window, Setwindow] = useState({ transform: "translateY(-100%)" });
   const [inputpointer, Setinputpointer] = useState(2);
   const [input1, Setinput1] = useState({});
   const [input2, Setinput2] = useState({});
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
+
+  //VARIABLES FOR AXIOS
+
+  console.log(JSON.parse(sessionStorage.getItem("userInputs"))[0].id);
 
   const nextinput = function () {
     switch (inputpointer) {
@@ -56,13 +61,46 @@ function HardwareAction() {
                 <b>availble</b> :
               </span>
               <ul className="inputlistcontroler">
-                <li className="inputlist">DUMP NAME (dump statu)</li>
-                <li className="inputlist">DUMP NAME (dump statu)</li>
-                <li className="inputlist">DUMP NAME (dump statu)</li>
-                <li className="inputlist">DUMP NAME (dump statu)</li>
+                <li className="inputlist">
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[0]
+                    .isUsed ? (
+                    <span className="cercle-red"></span>
+                  ) : (
+                    <span className="cercle-green"></span>
+                  )}
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[0].id}
+                </li>
+                <li className="inputlist">
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[1]
+                    .isUsed ? (
+                    <span className="cercle-red"></span>
+                  ) : (
+                    <span className="cercle-green"></span>
+                  )}
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[1].id}
+                </li>
+                <li className="inputlist">
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[2]
+                    .isUsed ? (
+                    <span className="cercle-red"></span>
+                  ) : (
+                    <span className="cercle-green"></span>
+                  )}
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[2].id}
+                </li>
+                <li className="inputlist">
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[3]
+                    .isUsed ? (
+                    <span className="cercle-red"></span>
+                  ) : (
+                    <span className="cercle-green"></span>
+                  )}
+                  {JSON.parse(sessionStorage.getItem("userInputs"))[3].id}
+                </li>
               </ul>
               <span>
-                You can only use the <b>availble</b> inputs.
+                You can only use the <b>availble</b> inputs which are{" "}
+                <b style={{ color: "#6cdb04" }}>green</b>.
               </span>
             </div>
             <div className="leave--btn--addsensor">
@@ -89,22 +127,32 @@ function HardwareAction() {
                   </div>
                 </div>
                 <div className="alarm-name-input-box">
-                  <label>Alarm Name</label>
-                  <input type="text" />
+                  <label htmlFor="alarmName">Alarm Name</label>
+                  <input type="text" id="alarmName" name="alarmName" />
                   <div>
-                    <span>Or</span>
+                    <span style={{ color: "red" }}>OR</span>
                   </div>
-                  <label>Select Alarm</label>
-                  <select type="text" />
+                  <label htmlFor="selectAlarm">Select Alarm</label>
+                  <select type="text" id="selectAlarm" name="selectAlarm" />
                 </div>
                 <div>
                   <div>
-                    <label>Upper Limit</label>
-                    <input className="upperlower--input" type="text" />
+                    <label htmlFor="upperLimit">Upper Limit</label>
+                    <input
+                      className="upperlower--input"
+                      type="text"
+                      id="upperLimit"
+                      name="upperLimit"
+                    />
                   </div>
                   <div>
-                    <label>Lower Limit</label>
-                    <input className="upperlower--input" type="text" />
+                    <label htmlFor="lowerLimit">Lower Limit</label>
+                    <input
+                      className="upperlower--input"
+                      type="text"
+                      id="lowerLimit"
+                      name="lowerLimit"
+                    />
                   </div>
                 </div>
               </div>

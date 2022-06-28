@@ -6,8 +6,9 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
     user: sessionStorage.userName,
     token: sessionStorage.userToken,
+    inputs: sessionStorage.userInputs,
   });
-  console.log(auth);
+
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
       {children}

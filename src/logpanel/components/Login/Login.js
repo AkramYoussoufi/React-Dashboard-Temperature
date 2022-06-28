@@ -94,7 +94,6 @@ function Login() {
             },
           }
         );
-        console.log(response?.data.result);
         const accesToken = response?.data?.result.token;
         const user = response?.data?.result.user.userName;
         sessionStorage.setItem("userName", user);
@@ -103,6 +102,21 @@ function Login() {
           user: sessionStorage.userName,
           token: sessionStorage.userToken,
         });
+        try {
+          if (sessionStorage.userName) {
+            const response = await axios.get("api/Inpute/GetUnUsedInputs");
+            const inputs = response?.data?.result;
+            sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+            setAuth({
+              user: sessionStorage.userName,
+              token: sessionStorage.userToken,
+              inputs: sessionStorage.userInputs,
+            });
+          }
+        } catch (err) {
+          console.log(err);
+        }
+
         setEmail("");
         setPassword("");
         navigate("/Dashboard");

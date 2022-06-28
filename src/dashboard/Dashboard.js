@@ -40,9 +40,6 @@ function Dashboard() {
               <div className="login--arrow">
                 <div className="user--panel">
                   <div>
-                    <button>Account Management</button>
-                  </div>
-                  <div>
                     <button
                       className="Logoutbutton"
                       onClick={() => {
