@@ -7,20 +7,24 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .action--container .window--add--container {
   position: absolute;
   top: 0px;
@@ -32,17 +36,17 @@
   z-index: 2;
   overflow: hidden;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-transition: all 1s;
   transition: all 1s;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   background-color: #619ed5;
 }
 
@@ -53,14 +57,17 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer {
   height: 50%;
   width: 100%;
   display: -webkit-box;
@@ -68,20 +75,24 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: white;
   padding-left: 3em;
   position: relative;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .title {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .title {
   font-weight: 300;
   font-size: 1.8em;
   height: 10%;
@@ -92,32 +103,54 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-right: 6em;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .infotext {
   font-weight: 300;
   font-size: 0.95em;
   height: auto;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .infotext
+  .inputlistcontroler {
   width: 50%;
   height: auto;
   overflow: auto;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .infotext
+  .inputlistcontroler
+  .inputlist {
   list-style-type: none;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist .cercle-red {
-  border: solid 1px #E83816;
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .infotext
+  .inputlistcontroler
+  .inputlist
+  .cercle-red {
+  border: solid 1px #e83816;
   background-color: #e83816;
   border-radius: 50%;
   width: 10px;
@@ -126,7 +159,14 @@
   display: inline-block;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .infotext .inputlistcontroler .inputlist .cercle-green {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .infotext
+  .inputlistcontroler
+  .inputlist
+  .cercle-green {
   border: solid 1px #6cdb04;
   background-color: #6cdb04;
   border-radius: 50%;
@@ -136,7 +176,11 @@
   display: inline-block;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .leave--btn--addsensor {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .leave--btn--addsensor {
   width: 100%;
   height: 0em;
   display: -webkit-box;
@@ -145,7 +189,12 @@
   padding-right: 40px;
 }
 
-.action--container .window--add--container .side-info-add-sensor .infocontainer .leave--btn--addsensor button {
+.action--container
+  .window--add--container
+  .side-info-add-sensor
+  .infocontainer
+  .leave--btn--addsensor
+  button {
   color: white;
   width: 8em;
   height: 3em;
@@ -166,21 +215,24 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   opacity: 1;
 }
 
-.action--container .window--add--container .window--add--box button.closewindow {
+.action--container
+  .window--add--container
+  .window--add--box
+  button.closewindow {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background-color: transparent;
   width: auto;
   height: auto;
@@ -190,15 +242,19 @@
   cursor: pointer;
 }
 
-.action--container .window--add--container .window--add--box button.closewindow img {
+.action--container
+  .window--add--container
+  .window--add--box
+  button.closewindow
+  img {
   width: 10em;
   height: 5em;
   -webkit-animation-name: folowup;
-          animation-name: folowup;
+  animation-name: folowup;
   -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .action--container .window--add--container .window--add--box h1 {
@@ -215,60 +271,82 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-left: solid 2px #eeeeee;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form {
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   position: absolute;
   -webkit-transition: all 1s;
   transition: all 1s;
   -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  transform: translateX(0%);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 10em;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form .errMsg--alarm {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  .errMsg--alarm {
   width: 90%;
   height: 100%;
   position: relative;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form .errMsg--alarm .msgbackground {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  .errMsg--alarm
+  .msgbackground {
   background-color: red;
   position: absolute;
   opacity: 0.5;
@@ -277,45 +355,78 @@
   z-index: -1;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form .errMsg--alarm .message {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  .errMsg--alarm
+  .message {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: white;
   z-index: 1;
   padding: 5px;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form .alarm-name-input-box {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  .alarm-name-input-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form .alarm-name-input-box div span {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  .alarm-name-input-box
+  div
+  span {
   color: white;
   font-weight: 600;
   margin-right: 10px;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form label {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  label {
   color: white;
   font-weight: 600;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form input {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  input {
   background-color: #7cb0db;
   border: none;
   outline: none;
@@ -324,11 +435,23 @@
   color: white;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form input.upperlower--input {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  input.upperlower--input {
   width: 2em;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-alarm-form select {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-alarm-form
+  select {
   background-color: #7cb0db;
   border: none;
   outline: none;
@@ -337,35 +460,53 @@
   color: white;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border: none;
   position: absolute;
   -webkit-transition: all 1s;
   transition: all 1s;
   -webkit-transform: translateX(-200%);
-          transform: translateX(-200%);
+  transform: translateX(-200%);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form .errMsg--alarm {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  .errMsg--alarm {
   width: 90%;
   height: 100%;
   position: relative;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form .errMsg--alarm .msgbackground {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  .errMsg--alarm
+  .msgbackground {
   background-color: red;
   position: absolute;
   opacity: 0.5;
@@ -374,27 +515,46 @@
   z-index: -1;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form .errMsg--alarm .message {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  .errMsg--alarm
+  .message {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: white;
   z-index: 1;
   padding: 5px;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form label {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  label {
   color: white;
   font-weight: 600;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form input {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  input {
   background-color: #7cb0db;
   border: none;
   outline: none;
@@ -403,7 +563,13 @@
   color: white;
 }
 
-.action--container .window--add--container .window--add--box .form-add-sensor form .add-sensor-form select {
+.action--container
+  .window--add--container
+  .window--add--box
+  .form-add-sensor
+  form
+  .add-sensor-form
+  select {
   background-color: #7cb0db;
   border: none;
   outline: none;
@@ -425,7 +591,10 @@
   cursor: pointer;
 }
 
-.action--container .window--add--container .window--add--box .button--next:hover {
+.action--container
+  .window--add--container
+  .window--add--box
+  .button--next:hover {
   background-color: white;
   color: #619ed5;
 }
@@ -438,11 +607,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .action--container .add--button--container .add--button {
@@ -495,30 +664,30 @@
 @-webkit-keyframes folowup {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
   50% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
   }
   100% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 
 @keyframes folowup {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
   50% {
     -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
+    transform: translateY(-25%);
   }
   100% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
   }
 }
 /*# sourceMappingURL=HardwareAction.css.map */

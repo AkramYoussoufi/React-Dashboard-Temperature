@@ -12,26 +12,47 @@ function HardwareAction() {
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
 
-  //VARIABLES FOR AXIOS
+  const [alarmProfileInputs, setAlarmProfileInputs] = useState({
+    name: "",
+    upperLimite: 0,
+    lowerLimites: 0,
+  });
+  const [sensorInputs, setSensorInputs] = useState({
+    inputId: null,
+    name: null,
+    delay: null,
+    alarmProfileId: null,
+  });
+  console.log(sensorInputs);
 
-  console.log(JSON.parse(sessionStorage.getItem("userInputs"))[0].id);
+  //VARIABLES FOR AXIOS
 
   const nextinput = function () {
     switch (inputpointer) {
-      default:
-        Setinput1({ transform: "translateX(0%)" });
-        Setinput2({ transform: "translateX(-200%)" });
-        Setinputpointer(2);
+      case 1:
+        {
+          //SubmitHandlerAddAlarmProfile();
+          Setinput1({ transform: "translateX(0%)" });
+          Setinput2({ transform: "translateX(-200%)" });
+          Setinputpointer(2);
+        }
         break;
       case 2:
-        Setinput1({ transform: "translateX(200%)" });
-        Setinput2({ transform: "translateX(0%)" });
-        Setaddbutton("Done");
-        Setaddbuttonstyle({
-          background: "#7DC72D",
-          color: "white",
-          border: "none",
-        });
+        if (
+          Object.values(alarmProfileInputs).every(
+            (x) => x !== null && x !== "" && x !== 0
+          )
+        ) {
+          SubmitHandlerAddAlarmProfile();
+          Setinput1({ transform: "translateX(200%)" });
+          Setinput2({ transform: "translateX(0%)" });
+          Setaddbutton("Done");
+          Setaddbuttonstyle({
+            background: "#7DC72D",
+            color: "white",
+            border: "none",
+          });
+        }
 
         break;
     }
@@ -44,6 +65,28 @@ function HardwareAction() {
       Setinputpointer(2);
       Setaddbutton("Next");
       Setaddbuttonstyle({});
+    }
+  };
+
+  const SubmitHandlerAddAlarmProfile = async () => {
+    try {
+      const response = await axios.post(
+        "api/AlarmProfiles",
+        alarmProfileInputs
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const SubmitHandlerAddAlarmSensor = async () => {
+    try {
+      const response = await axios.post("api/Sensors", {
+        ...sensorInputs,
+        alarmProfileId: "8B04E50E-491B-40C8-FFEC-08DA5B577DBC",
+      });
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -128,7 +171,17 @@ function HardwareAction() {
                 </div>
                 <div className="alarm-name-input-box">
                   <label htmlFor="alarmName">Alarm Name</label>
-                  <input type="text" id="alarmName" name="alarmName" />
+                  <input
+                    type="text"
+                    id="alarmName"
+                    name="alarmName"
+                    onChange={(e) => {
+                      setAlarmProfileInputs({
+                        ...alarmProfileInputs,
+                        name: e.target.value,
+                      });
+                    }}
+                  />
                   <div>
                     <span style={{ color: "red" }}>OR</span>
                   </div>
@@ -140,18 +193,30 @@ function HardwareAction() {
                     <label htmlFor="upperLimit">Upper Limit</label>
                     <input
                       className="upperlower--input"
-                      type="text"
+                      type="number"
                       id="upperLimit"
                       name="upperLimit"
+                      onChange={(e) => {
+                        setAlarmProfileInputs({
+                          ...alarmProfileInputs,
+                          upperLimite: parseInt(e.target.value),
+                        });
+                      }}
                     />
                   </div>
                   <div>
                     <label htmlFor="lowerLimit">Lower Limit</label>
                     <input
                       className="upperlower--input"
-                      type="text"
+                      type="number"
                       id="lowerLimit"
                       name="lowerLimit"
+                      onChange={(e) => {
+                        setAlarmProfileInputs({
+                          ...alarmProfileInputs,
+                          lowerLimites: parseInt(e.target.value),
+                        });
+                      }}
                     />
                   </div>
                 </div>
@@ -164,13 +229,83 @@ function HardwareAction() {
                   </div>
                 </div>
                 <label>Sensor Name</label>
-                <input type="text" />
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setSensorInputs({
+                      ...sensorInputs,
+                      name: e.target.value,
+                    });
+                  }}
+                />
                 <div>
                   {" "}
                   <label>Inputs</label>
-                  <select type="text" />
+                  <select
+                    type="text"
+                    onChange={(e) => {
+                      setSensorInputs({
+                        ...sensorInputs,
+                        inputId: e.target.value,
+                      });
+                    }}
+                  >
+                    <option value={""}>-</option>
+                    <option
+                      value={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[0].id
+                      }
+                      disabled={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[0]
+                          .isUsed
+                      }
+                    >
+                      {JSON.parse(sessionStorage.getItem("userInputs"))[0].id}
+                    </option>
+                    <option
+                      value={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[1].id
+                      }
+                      disabled={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[1]
+                          .isUsed
+                      }
+                    >
+                      {JSON.parse(sessionStorage.getItem("userInputs"))[1].id}
+                    </option>
+                    <option
+                      value={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[2].id
+                      }
+                      disabled={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[2]
+                          .isUsed
+                      }
+                    >
+                      {JSON.parse(sessionStorage.getItem("userInputs"))[2].id}
+                    </option>
+                    <option
+                      value={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[3].id
+                      }
+                      disabled={
+                        JSON.parse(sessionStorage.getItem("userInputs"))[3]
+                          .isUsed
+                      }
+                    >
+                      {JSON.parse(sessionStorage.getItem("userInputs"))[3].id}
+                    </option>
+                  </select>
                   <label>Delay</label>
-                  <select type="text">
+                  <select
+                    type="text"
+                    onChange={(e) => {
+                      setSensorInputs({
+                        ...sensorInputs,
+                        delay: parseInt(e.target.value),
+                      });
+                    }}
+                  >
                     {" "}
                     <option value="1">1</option>
                     <option value="5">5</option>
@@ -187,7 +322,9 @@ function HardwareAction() {
             </button>
             <button
               className="button--next"
-              onClick={nextinput}
+              onClick={
+                addbutton === "Done" ? SubmitHandlerAddAlarmSensor : nextinput
+              }
               style={addbuttonstyle}
             >
               {addbutton}

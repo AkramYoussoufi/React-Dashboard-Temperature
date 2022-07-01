@@ -102,34 +102,30 @@ function Login() {
           user: sessionStorage.userName,
           token: sessionStorage.userToken,
         });
-        try {
-          if (sessionStorage.userName) {
-            const response = await axios.get("api/Inpute/GetUnUsedInputs");
-            const inputs = response?.data?.result;
-            sessionStorage.setItem("userInputs", JSON.stringify(inputs));
-            setAuth({
-              user: sessionStorage.userName,
-              token: sessionStorage.userToken,
-              inputs: sessionStorage.userInputs,
-            });
-          }
-        } catch (err) {
-          console.log(err);
+        if (sessionStorage.userName) {
+          const response = await axios.get("api/Inpute/GetUnUsedInputs");
+          const response2 = await axios.get("api/AlarmProfiles");
+          const inputs = response?.data?.result;
+          console.log(inputs);
+          sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+          setAuth({
+            user: sessionStorage.userName,
+            token: sessionStorage.userToken,
+            inputs: sessionStorage.userInputs,
+          });
+          setEmail("");
+          setPassword("");
+          navigate("/Dashboard");
         }
-
-        setEmail("");
-        setPassword("");
-        navigate("/Dashboard");
       } else {
         setErrMsg({ active: true, message: "Nice try" });
       }
     } catch (err) {
-      if (err.response.status === 400) {
+      if (err) {
         setErrMsg({
           message: "Your Password or Email are wrong or dosen't exist.",
           active: true,
         });
-        console.log(err);
       } else {
         setErrMsg({
           message: "Something went wrong please try again.",
