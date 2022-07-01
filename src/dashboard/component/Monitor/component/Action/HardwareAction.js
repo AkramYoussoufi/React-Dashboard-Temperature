@@ -23,10 +23,10 @@ function HardwareAction() {
     delay: null,
     alarmProfileId: null,
   });
-  console.log(sensorInputs);
+
+  const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile), "test"];
 
   //VARIABLES FOR AXIOS
-
   const nextinput = function () {
     switch (inputpointer) {
       case 1:

@@ -79,7 +79,7 @@ function Login() {
 
       if (validEmail && validPassword) {
         const response = await axios.post(
-          LOGIN_URL,
+          "/api/Users/Login",
           {
             email,
             password,
@@ -103,15 +103,17 @@ function Login() {
           token: sessionStorage.userToken,
         });
         if (sessionStorage.userName) {
-          const response = await axios.get("api/Inpute/GetUnUsedInputs");
+          const response = await axios.get("api/Inpute/GetAllInputs");
           const response2 = await axios.get("api/AlarmProfiles");
           const inputs = response?.data?.result;
-          console.log(inputs);
+          const alarmProfile = response2.data.result;
           sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+          sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
           setAuth({
             user: sessionStorage.userName,
             token: sessionStorage.userToken,
             inputs: sessionStorage.userInputs,
+            alarmProfile: sessionStorage.alarmProfile,
           });
           setEmail("");
           setPassword("");
