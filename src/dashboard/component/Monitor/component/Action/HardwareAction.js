@@ -19,6 +19,7 @@ function HardwareAction() {
     upperLimite: 0,
     lowerLimites: 0,
   });
+  console.log(alarmProfileInputs);
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
 
   const [sensorInputs, setSensorInputs] = useState({
@@ -80,6 +81,7 @@ function HardwareAction() {
       Setinputpointer(2);
       Setaddbutton("Next");
       Setaddbuttonstyle({});
+      window.location.reload(true);
     }
   };
 
@@ -386,7 +388,7 @@ function HardwareAction() {
               }
               style={
                 Object.values(alarmProfileInputs).every(
-                  (x) => x !== null && x !== "" && x !== 0
+                  (x) => x !== "" && x !== 0
                 ) || isAlarmSelected
                   ? addbuttonstyle
                   : { opacity: "0.5", pointerEvents: "none" }
