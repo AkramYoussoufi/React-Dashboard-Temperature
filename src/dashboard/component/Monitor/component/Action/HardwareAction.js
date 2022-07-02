@@ -1,5 +1,5 @@
 import "./HardwareAction.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "../../../../../api/axios";
 import useAuth from "../../../../../hooks/useAuth";
 
@@ -11,20 +11,24 @@ function HardwareAction() {
   const [input2, Setinput2] = useState({});
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
+  const [isAlarmSelected, SetisAlarmSelected] = useState(false);
+  const [selectedAlarm, setSelectedAlarm] = useState();
 
   const [alarmProfileInputs, setAlarmProfileInputs] = useState({
     name: "",
     upperLimite: 0,
     lowerLimites: 0,
   });
+  const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
+
   const [sensorInputs, setSensorInputs] = useState({
     inputId: null,
     name: null,
     delay: null,
-    alarmProfileId: null,
+    alarmProfileId: "",
   });
 
-  const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile), "test"];
+  console.log(sensorInputs);
 
   //VARIABLES FOR AXIOS
   const nextinput = function () {
@@ -34,6 +38,7 @@ function HardwareAction() {
           //SubmitHandlerAddAlarmProfile();
           Setinput1({ transform: "translateX(0%)" });
           Setinput2({ transform: "translateX(-200%)" });
+          Setaddbuttonstyle({});
           Setinputpointer(2);
         }
         break;
@@ -41,9 +46,19 @@ function HardwareAction() {
         if (
           Object.values(alarmProfileInputs).every(
             (x) => x !== null && x !== "" && x !== 0
-          )
+          ) ||
+          isAlarmSelected
         ) {
-          SubmitHandlerAddAlarmProfile();
+          setSensorInputs({
+            alarmProfileId: isAlarmSelected
+              ? alarmProfile[
+                  document.querySelector("select#selectAlarm").selectedIndex
+                ].id
+              : alarmProfile[alarmProfile.length - 1].id,
+          });
+          if (!isAlarmSelected) {
+            SubmitHandlerAddAlarmProfile();
+          }
           Setinput1({ transform: "translateX(200%)" });
           Setinput2({ transform: "translateX(0%)" });
           Setaddbutton("Done");
@@ -70,10 +85,16 @@ function HardwareAction() {
 
   const SubmitHandlerAddAlarmProfile = async () => {
     try {
-      const response = await axios.post(
+      const response1 = await axios.post(
         "api/AlarmProfiles",
         alarmProfileInputs
       );
+      const response = await axios.get("api/Inpute/GetAllInputs");
+      const response2 = await axios.get("api/AlarmProfiles");
+      const inputs = response?.data?.result;
+      const alarmProfile = response2.data.result;
+      sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+      sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
     } catch (err) {
       console.log(err);
     }
@@ -83,7 +104,6 @@ function HardwareAction() {
     try {
       const response = await axios.post("api/Sensors", {
         ...sensorInputs,
-        alarmProfileId: "8B04E50E-491B-40C8-FFEC-08DA5B577DBC",
       });
     } catch (err) {
       console.log(err);
@@ -175,6 +195,8 @@ function HardwareAction() {
                     type="text"
                     id="alarmName"
                     name="alarmName"
+                    style={isAlarmSelected ? { opacity: "0.5" } : {}}
+                    disabled={isAlarmSelected}
                     onChange={(e) => {
                       setAlarmProfileInputs({
                         ...alarmProfileInputs,
@@ -186,7 +208,30 @@ function HardwareAction() {
                     <span style={{ color: "red" }}>OR</span>
                   </div>
                   <label htmlFor="selectAlarm">Select Alarm</label>
-                  <select type="text" id="selectAlarm" name="selectAlarm" />
+                  <select
+                    type="text"
+                    id="selectAlarm"
+                    name="selectAlarm"
+                    onChange={(e) => {
+                      if (
+                        document.querySelector("select#selectAlarm")
+                          .selectedIndex === 0
+                      ) {
+                        SetisAlarmSelected(false);
+                      } else {
+                        SetisAlarmSelected(true);
+                        document.querySelector("input#alarmName").value = "";
+                        document.querySelector("input#upperLimit").value = 0;
+                        document.querySelector("input#lowerLimit").value = 0;
+                      }
+                      setSelectedAlarm(e.target.value);
+                    }}
+                  >
+                    <option></option>
+                    {alarmProfile.map((x) => (
+                      <option>{x.name}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <div>
@@ -196,6 +241,9 @@ function HardwareAction() {
                       type="number"
                       id="upperLimit"
                       name="upperLimit"
+                      value="0"
+                      disabled={isAlarmSelected}
+                      style={isAlarmSelected ? { opacity: "0.5" } : {}}
                       onChange={(e) => {
                         setAlarmProfileInputs({
                           ...alarmProfileInputs,
@@ -211,6 +259,9 @@ function HardwareAction() {
                       type="number"
                       id="lowerLimit"
                       name="lowerLimit"
+                      style={isAlarmSelected ? { opacity: "0.5" } : {}}
+                      disabled={isAlarmSelected}
+                      value="0"
                       onChange={(e) => {
                         setAlarmProfileInputs({
                           ...alarmProfileInputs,
@@ -317,7 +368,15 @@ function HardwareAction() {
           </div>
           <div className="form-button">
             {" "}
-            <button className="button--next" onClick={previnput}>
+            <button
+              className="button--next"
+              onClick={previnput}
+              style={
+                addbutton === "Next"
+                  ? { opacity: "0.5", pointerEvents: "none" }
+                  : {}
+              }
+            >
               Prev
             </button>
             <button
@@ -325,7 +384,13 @@ function HardwareAction() {
               onClick={
                 addbutton === "Done" ? SubmitHandlerAddAlarmSensor : nextinput
               }
-              style={addbuttonstyle}
+              style={
+                Object.values(alarmProfileInputs).every(
+                  (x) => x !== null && x !== "" && x !== 0
+                ) || isAlarmSelected
+                  ? addbuttonstyle
+                  : { opacity: "0.5", pointerEvents: "none" }
+              }
             >
               {addbutton}
             </button>
