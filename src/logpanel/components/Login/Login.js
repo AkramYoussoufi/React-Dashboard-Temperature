@@ -73,7 +73,7 @@ function Login() {
   const submitHandlerLog = async (e) => {
     //setErrMsg({ active: true, message: "loading" }); EXAMPLE OF LOADING SCREEN
     e.preventDefault();
-
+    setErrMsg({ active: false, message: "" });
     try {
       let date = new Date();
 

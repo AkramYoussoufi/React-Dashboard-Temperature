@@ -12,15 +12,20 @@ function HardwareAction() {
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
   const [isAlarmSelected, SetisAlarmSelected] = useState(false);
-  const [selectedAlarm, setSelectedAlarm] = useState();
+  const { auth, setAuth } = useAuth();
 
   const [alarmProfileInputs, setAlarmProfileInputs] = useState({
     name: "",
     upperLimite: 0,
     lowerLimites: 0,
   });
-  console.log(alarmProfileInputs);
+
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
+
+  const [inputs, setInputs] = useState([
+    ...JSON.parse(sessionStorage.userInputs),
+  ]);
+  console.log(inputs);
 
   const [sensorInputs, setSensorInputs] = useState({
     inputId: null,
@@ -29,7 +34,9 @@ function HardwareAction() {
     alarmProfileId: "",
   });
 
+  console.log(alarmProfileInputs);
   console.log(sensorInputs);
+  console.log(isAlarmSelected);
 
   //VARIABLES FOR AXIOS
   const nextinput = function () {
@@ -50,16 +57,10 @@ function HardwareAction() {
           ) ||
           isAlarmSelected
         ) {
-          setSensorInputs({
-            alarmProfileId: isAlarmSelected
-              ? alarmProfile[
-                  document.querySelector("select#selectAlarm").selectedIndex
-                ].id
-              : alarmProfile[alarmProfile.length - 1].id,
-          });
           if (!isAlarmSelected) {
             SubmitHandlerAddAlarmProfile();
           }
+
           Setinput1({ transform: "translateX(200%)" });
           Setinput2({ transform: "translateX(0%)" });
           Setaddbutton("Done");
@@ -73,6 +74,18 @@ function HardwareAction() {
         break;
     }
   };
+
+  const RetrieveInfo = async () => {
+    const response = await axios.get("api/Inpute/GetAllInputs");
+    const response2 = await axios.get("api/AlarmProfiles");
+    const inputs = response?.data?.result;
+    const alarmProfile = response2.data.result;
+    sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
+  };
+
+  useEffect(() => {
+    RetrieveInfo();
+  });
 
   const previnput = function () {
     if (inputpointer === 2) {
@@ -91,12 +104,6 @@ function HardwareAction() {
         "api/AlarmProfiles",
         alarmProfileInputs
       );
-      const response = await axios.get("api/Inpute/GetAllInputs");
-      const response2 = await axios.get("api/AlarmProfiles");
-      const inputs = response?.data?.result;
-      const alarmProfile = response2.data.result;
-      sessionStorage.setItem("userInputs", JSON.stringify(inputs));
-      sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
     } catch (err) {
       console.log(err);
     }
@@ -104,9 +111,7 @@ function HardwareAction() {
 
   const SubmitHandlerAddAlarmSensor = async () => {
     try {
-      const response = await axios.post("api/Sensors", {
-        ...sensorInputs,
-      });
+      const response = await axios.post("api/Sensors", sensorInputs);
     } catch (err) {
       console.log(err);
     }
@@ -226,7 +231,6 @@ function HardwareAction() {
                         document.querySelector("input#upperLimit").value = 0;
                         document.querySelector("input#lowerLimit").value = 0;
                       }
-                      setSelectedAlarm(e.target.value);
                     }}
                   >
                     <option></option>
@@ -243,7 +247,6 @@ function HardwareAction() {
                       type="number"
                       id="upperLimit"
                       name="upperLimit"
-                      value="0"
                       disabled={isAlarmSelected}
                       style={isAlarmSelected ? { opacity: "0.5" } : {}}
                       onChange={(e) => {
@@ -263,7 +266,6 @@ function HardwareAction() {
                       name="lowerLimit"
                       style={isAlarmSelected ? { opacity: "0.5" } : {}}
                       disabled={isAlarmSelected}
-                      value="0"
                       onChange={(e) => {
                         setAlarmProfileInputs({
                           ...alarmProfileInputs,
@@ -288,6 +290,12 @@ function HardwareAction() {
                     setSensorInputs({
                       ...sensorInputs,
                       name: e.target.value,
+                      alarmProfileId: isAlarmSelected
+                        ? alarmProfile[
+                            document.querySelector("select#selectAlarm")
+                              .selectedIndex
+                          ].id
+                        : alarmProfile[alarmProfile.length - 1].id,
                     });
                   }}
                 />
@@ -300,53 +308,27 @@ function HardwareAction() {
                       setSensorInputs({
                         ...sensorInputs,
                         inputId: e.target.value,
+                        alarmProfileId: isAlarmSelected
+                          ? alarmProfile[
+                              document.querySelector("select#selectAlarm")
+                                .selectedIndex
+                            ].id
+                          : alarmProfile[alarmProfile.length - 1].id,
                       });
                     }}
                   >
-                    <option value={""}>-</option>
-                    <option
-                      value={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[0].id
-                      }
-                      disabled={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[0]
-                          .isUsed
-                      }
-                    >
-                      {JSON.parse(sessionStorage.getItem("userInputs"))[0].id}
+                    <option></option>
+                    <option value={inputs[0].id} disabled={inputs[0].isUsed}>
+                      {inputs[0].id}
                     </option>
-                    <option
-                      value={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[1].id
-                      }
-                      disabled={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[1]
-                          .isUsed
-                      }
-                    >
-                      {JSON.parse(sessionStorage.getItem("userInputs"))[1].id}
+                    <option value={inputs[1].id} disabled={inputs[1].isUsed}>
+                      {inputs[1].id}
                     </option>
-                    <option
-                      value={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[2].id
-                      }
-                      disabled={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[2]
-                          .isUsed
-                      }
-                    >
-                      {JSON.parse(sessionStorage.getItem("userInputs"))[2].id}
+                    <option value={inputs[2].id} disabled={inputs[2].isUsed}>
+                      {inputs[2].id}
                     </option>
-                    <option
-                      value={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[3].id
-                      }
-                      disabled={
-                        JSON.parse(sessionStorage.getItem("userInputs"))[3]
-                          .isUsed
-                      }
-                    >
-                      {JSON.parse(sessionStorage.getItem("userInputs"))[3].id}
+                    <option value={inputs[3].id} disabled={inputs[3].isUsed}>
+                      {inputs[3].id}
                     </option>
                   </select>
                   <label>Delay</label>
@@ -356,10 +338,16 @@ function HardwareAction() {
                       setSensorInputs({
                         ...sensorInputs,
                         delay: parseInt(e.target.value),
+                        alarmProfileId: isAlarmSelected
+                          ? alarmProfile[
+                              document.querySelector("select#selectAlarm")
+                                .selectedIndex
+                            ].id
+                          : alarmProfile[alarmProfile.length - 1].id,
                       });
                     }}
                   >
-                    {" "}
+                    <option></option>
                     <option value="1">1</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
