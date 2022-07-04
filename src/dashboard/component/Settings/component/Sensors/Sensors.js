@@ -1,5 +1,12 @@
-import React from "react";
 import "./Sensors.css";
 export default function Sensors() {
-  return <li className="sensorlist">Sensor 1</li>;
+  const sensors = [...JSON.parse(sessionStorage.userSensors)];
+  return (
+    <>
+      {" "}
+      {sensors.map((x) => (
+        <li className="sensorlist">{x.name}</li>
+      ))}
+    </>
+  );
 }

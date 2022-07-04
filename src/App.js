@@ -1,13 +1,17 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect } from "react";
 import Dashboard from "./dashboard/Dashboard";
 import LogPanel from "./logpanel/Logpanel";
 import Layout from "./layout/Layout";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import RequireAuth from "./RequireAuth";
 import React from "react";
+import InfoRetriever from "./hooks/InfoRetriever";
 
 export default function App() {
+  window.setInterval(function () {
+    InfoRetriever();
+  }, 100);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

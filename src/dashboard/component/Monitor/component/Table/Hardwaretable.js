@@ -4,35 +4,9 @@ import { useState } from "react";
 import Table from "./component/Table/Table";
 
 function Hardwaretable() {
-  const [row, Setrow] = useState([
-    {
-      id: 1,
-      sensor: "ROOM " + 1,
-      alarm_profile: Math.floor(Math.random() * 30 + 1) > 15 ? "ON" : "OFF",
-      value: 10,
-      state: Math.floor(Math.random() * 30 + 1) > 15 ? "BAD" : "GOOD",
-    },
-    {
-      id: 2,
-      sensor: "ROOM " + 2,
-      alarm_profile: Math.floor(Math.random() * 30 + 1) > 15 ? "ON" : "OFF",
-      value: 30,
-      state: Math.floor(Math.random() * 30 + 1) > 15 ? "BAD" : "GOOD",
-    },
-  ]);
-
-  const test = function () {
-    Setrow((PrevState) => [
-      ...PrevState,
-      {
-        id: row[row.length - 1].id + 1,
-        sensor: "ROOM " + Number(row[row.length - 1].id + 1),
-        alarm_profile: Math.floor(Math.random() * 30 + 1) > 15 ? "ON" : "OFF",
-        value: Math.floor(Math.random() * 30 + 1),
-        state: Math.floor(Math.random() * 30 + 1) > 15 ? "BAD" : "GOOD",
-      },
-    ]);
-  };
+  const sensor = JSON.parse(sessionStorage.userSensors);
+  console.log(sensor);
+  /*const sensorlist = */
 
   return (
     <div className="table--container">
@@ -67,7 +41,7 @@ function Hardwaretable() {
         </div>
       </div>
       <div className="table">
-        <Table sentdata={row} />
+        <Table sentdata={sensor} />
         <button className="button--group" /*onClick={confirmdelete}*/>
           <div className="button--group--arrow"></div> Delete
         </button>

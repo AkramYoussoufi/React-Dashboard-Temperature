@@ -4,6 +4,7 @@ import AuthContext from "../../../context/AuthProvider";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "../../../api/axios";
 import useAuth from "../../../hooks/useAuth";
+import InfoRetriever from "../../../hooks/InfoRetriever";
 
 //THIS IS NATIVE JS FOR THE ANIMATIONS
 const showhide1 = function () {
@@ -104,17 +105,15 @@ function Login() {
         });
         if (sessionStorage.userName) {
           const response = await axios.get("api/Inpute/GetAllInputs");
-          const response2 = await axios.get("api/AlarmProfiles");
-          const inputs = response?.data?.result;
-          const alarmProfile = response2.data.result;
-          sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+          const response1 = await axios.get("api/AlarmProfiles");
+          const response2 = await axios.get("/api/Sensors");
+          const inputs = response.data.result;
+          const alarmProfile = response1.data.result;
+          const sensors = response2.data.result;
           sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
-          setAuth({
-            user: sessionStorage.userName,
-            token: sessionStorage.userToken,
-            inputs: sessionStorage.userInputs,
-            alarmProfile: sessionStorage.alarmProfile,
-          });
+          sessionStorage.setItem("userInputs", JSON.stringify(inputs));
+          sessionStorage.setItem("userSensors", JSON.stringify(sensors));
+          InfoRetriever();
           setEmail("");
           setPassword("");
           navigate("/Dashboard");

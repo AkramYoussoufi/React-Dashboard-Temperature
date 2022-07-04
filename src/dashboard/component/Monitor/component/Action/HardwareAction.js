@@ -1,7 +1,7 @@
 import "./HardwareAction.css";
 import { useState, useEffect } from "react";
 import axios from "../../../../../api/axios";
-import useAuth from "../../../../../hooks/useAuth";
+import InfoRetriever from "../../../../../hooks/InfoRetriever";
 
 function HardwareAction() {
   //VARIABLES FOR ANIMATIONS
@@ -12,7 +12,6 @@ function HardwareAction() {
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
   const [isAlarmSelected, SetisAlarmSelected] = useState(false);
-  const { auth, setAuth } = useAuth();
 
   const [alarmProfileInputs, setAlarmProfileInputs] = useState({
     name: "",
@@ -21,11 +20,7 @@ function HardwareAction() {
   });
 
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
-
-  const [inputs, setInputs] = useState([
-    ...JSON.parse(sessionStorage.userInputs),
-  ]);
-  console.log(inputs);
+  const inputs = [...JSON.parse(sessionStorage.userInputs)];
 
   const [sensorInputs, setSensorInputs] = useState({
     inputId: null,
@@ -33,10 +28,6 @@ function HardwareAction() {
     delay: null,
     alarmProfileId: "",
   });
-
-  console.log(alarmProfileInputs);
-  console.log(sensorInputs);
-  console.log(isAlarmSelected);
 
   //VARIABLES FOR AXIOS
   const nextinput = function () {
@@ -48,6 +39,7 @@ function HardwareAction() {
           Setinput2({ transform: "translateX(-200%)" });
           Setaddbuttonstyle({});
           Setinputpointer(2);
+          InfoRetriever();
         }
         break;
       case 2:
@@ -60,7 +52,7 @@ function HardwareAction() {
           if (!isAlarmSelected) {
             SubmitHandlerAddAlarmProfile();
           }
-
+          InfoRetriever();
           Setinput1({ transform: "translateX(200%)" });
           Setinput2({ transform: "translateX(0%)" });
           Setaddbutton("Done");
@@ -75,18 +67,6 @@ function HardwareAction() {
     }
   };
 
-  const RetrieveInfo = async () => {
-    const response = await axios.get("api/Inpute/GetAllInputs");
-    const response2 = await axios.get("api/AlarmProfiles");
-    const inputs = response?.data?.result;
-    const alarmProfile = response2.data.result;
-    sessionStorage.setItem("alarmProfile", JSON.stringify(alarmProfile));
-  };
-
-  useEffect(() => {
-    RetrieveInfo();
-  });
-
   const previnput = function () {
     if (inputpointer === 2) {
       Setinput1({ transform: "translateX(0%)" });
@@ -95,25 +75,31 @@ function HardwareAction() {
       Setaddbutton("Next");
       Setaddbuttonstyle({});
       window.location.reload(true);
+      InfoRetriever();
     }
   };
 
   const SubmitHandlerAddAlarmProfile = async () => {
     try {
-      const response1 = await axios.post(
+      const response = await axios.post(
         "api/AlarmProfiles",
         alarmProfileInputs
       );
+      InfoRetriever();
     } catch (err) {
       console.log(err);
+      InfoRetriever();
     }
   };
 
-  const SubmitHandlerAddAlarmSensor = async () => {
+  const SubmitHandlerAddSensor = async () => {
     try {
       const response = await axios.post("api/Sensors", sensorInputs);
+      InfoRetriever();
+      Setwindow({ transform: "translateY(0%)" });
     } catch (err) {
       console.log(err);
+      InfoRetriever();
     }
   };
 
@@ -132,40 +118,36 @@ function HardwareAction() {
               </span>
               <ul className="inputlistcontroler">
                 <li className="inputlist">
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[0]
-                    .isUsed ? (
+                  {inputs[0].isUsed ? (
                     <span className="cercle-red"></span>
                   ) : (
                     <span className="cercle-green"></span>
                   )}
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[0].id}
+                  {inputs[0].id}
                 </li>
                 <li className="inputlist">
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[1]
-                    .isUsed ? (
+                  {inputs[1].isUsed ? (
                     <span className="cercle-red"></span>
                   ) : (
                     <span className="cercle-green"></span>
                   )}
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[1].id}
+                  {inputs[1].id}
                 </li>
                 <li className="inputlist">
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[2]
-                    .isUsed ? (
+                  {inputs[2].isUsed ? (
                     <span className="cercle-red"></span>
                   ) : (
                     <span className="cercle-green"></span>
                   )}
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[2].id}
+                  {inputs[2].id}
                 </li>
                 <li className="inputlist">
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[3]
-                    .isUsed ? (
+                  {inputs[3].isUsed ? (
                     <span className="cercle-red"></span>
                   ) : (
                     <span className="cercle-green"></span>
                   )}
-                  {JSON.parse(sessionStorage.getItem("userInputs"))[3].id}
+                  {inputs[3].id}
                 </li>
               </ul>
               <span>
@@ -177,6 +159,7 @@ function HardwareAction() {
               <button
                 onClick={() => {
                   Setwindow({ transform: "translateY(-100%)" });
+                  InfoRetriever();
                 }}
               >
                 Leave
@@ -235,7 +218,7 @@ function HardwareAction() {
                   >
                     <option></option>
                     {alarmProfile.map((x) => (
-                      <option>{x.name}</option>
+                      <option key={x.id}>{x.name}</option>
                     ))}
                   </select>
                 </div>
@@ -372,7 +355,7 @@ function HardwareAction() {
             <button
               className="button--next"
               onClick={
-                addbutton === "Done" ? SubmitHandlerAddAlarmSensor : nextinput
+                addbutton === "Done" ? SubmitHandlerAddSensor : nextinput
               }
               style={
                 Object.values(alarmProfileInputs).every(
