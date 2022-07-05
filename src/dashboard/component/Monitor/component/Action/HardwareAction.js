@@ -12,6 +12,7 @@ function HardwareAction() {
   const [addbutton, Setaddbutton] = useState("Next");
   const [addbuttonstyle, Setaddbuttonstyle] = useState({});
   const [isAlarmSelected, SetisAlarmSelected] = useState(false);
+  const [errMsg, setErrMsg] = useState({ active: false, message: "" });
 
   const [alarmProfileInputs, setAlarmProfileInputs] = useState({
     name: "",
@@ -44,9 +45,10 @@ function HardwareAction() {
         break;
       case 2:
         if (
-          Object.values(alarmProfileInputs).every(
+          (Object.values(alarmProfileInputs).every(
             (x) => x !== null && x !== "" && x !== 0
-          ) ||
+          ) &&
+            alarmProfileInputs.upperLimit > alarmProfileInputs.lowerLimites) ||
           isAlarmSelected
         ) {
           if (!isAlarmSelected) {
@@ -74,7 +76,6 @@ function HardwareAction() {
       Setinputpointer(2);
       Setaddbutton("Next");
       Setaddbuttonstyle({});
-      window.location.reload(true);
       InfoRetriever();
     }
   };
@@ -87,7 +88,11 @@ function HardwareAction() {
       );
       InfoRetriever();
     } catch (err) {
-      console.log(err);
+      if (err) {
+        setErrMsg({ active: true, message: err });
+      } else {
+        setErrMsg({ active: false, message: err });
+      }
       InfoRetriever();
     }
   };
@@ -96,9 +101,14 @@ function HardwareAction() {
     try {
       const response = await axios.post("api/Sensors", sensorInputs);
       InfoRetriever();
-      Setwindow({ transform: "translateY(0%)" });
+      setErrMsg({ active: false });
+      Setwindow({ transform: "translateY(-100%)" });
     } catch (err) {
-      console.log(err);
+      setErrMsg({
+        active: true,
+        message:
+          "Sensor Name already exist please chose another one or delete the old one",
+      });
       InfoRetriever();
     }
   };
@@ -173,10 +183,13 @@ function HardwareAction() {
             {" "}
             <form>
               <div className="add-alarm-form" style={input1}>
-                <div className="errMsg--alarm">
+                <div
+                  className="errMsg--alarm"
+                  style={{ height: errMsg.active ? "100%" : "0px" }}
+                >
                   <div className="msgbackground"></div>
                   <div className="message">
-                    <div></div>
+                    <div>{errMsg.message}</div>
                   </div>
                 </div>
                 <div className="alarm-name-input-box">
@@ -192,6 +205,21 @@ function HardwareAction() {
                         ...alarmProfileInputs,
                         name: e.target.value,
                       });
+                      if (
+                        alarmProfile.findIndex((x) => {
+                          return x.name !== e.target.value;
+                        })
+                      ) {
+                        setErrMsg({
+                          active: true,
+                          message:
+                            "The Alarm Name you typed is already exist you can select it in the drop down menu",
+                        });
+                      } else {
+                        setErrMsg({
+                          active: false,
+                        });
+                      }
                     }}
                   />
                   <div>
@@ -237,6 +265,21 @@ function HardwareAction() {
                           ...alarmProfileInputs,
                           upperLimite: parseInt(e.target.value),
                         });
+                        if (
+                          parseInt(e.target.value) <=
+                          alarmProfileInputs.lowerLimites
+                        ) {
+                          setErrMsg({
+                            active: true,
+                            message:
+                              "UpperLimit should be greater then LowerLimit",
+                          });
+                        } else {
+                          setErrMsg({
+                            active: false,
+                            message: "",
+                          });
+                        }
                       }}
                     />
                   </div>
@@ -254,16 +297,34 @@ function HardwareAction() {
                           ...alarmProfileInputs,
                           lowerLimites: parseInt(e.target.value),
                         });
+                        if (
+                          parseInt(e.target.value) >=
+                          alarmProfileInputs.upperLimite
+                        ) {
+                          setErrMsg({
+                            active: true,
+                            message:
+                              "UpperLimit should be greater then LowerLimit",
+                          });
+                        } else {
+                          setErrMsg({
+                            active: false,
+                            message: "",
+                          });
+                        }
                       }}
                     />
                   </div>
                 </div>
               </div>
               <div className="add-sensor-form" style={input2}>
-                <div className="errMsg--alarm">
+                <div
+                  className="errMsg--alarm"
+                  style={{ height: errMsg.active ? "100%" : "0px" }}
+                >
                   <div className="msgbackground"></div>
                   <div className="message">
-                    <div></div>
+                    <div>{errMsg.message}</div>
                   </div>
                 </div>
                 <label>Sensor Name</label>
@@ -358,9 +419,15 @@ function HardwareAction() {
                 addbutton === "Done" ? SubmitHandlerAddSensor : nextinput
               }
               style={
-                Object.values(alarmProfileInputs).every(
+                (Object.values(alarmProfileInputs).every(
                   (x) => x !== "" && x !== 0
-                ) || isAlarmSelected
+                ) &&
+                  alarmProfileInputs.upperLimite >
+                    alarmProfileInputs.lowerLimites &&
+                  alarmProfile.findIndex((x) => {
+                    return x.name === alarmProfileInputs.name;
+                  })) ||
+                isAlarmSelected
                   ? addbuttonstyle
                   : { opacity: "0.5", pointerEvents: "none" }
               }

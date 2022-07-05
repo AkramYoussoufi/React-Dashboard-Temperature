@@ -249,4 +249,17 @@ table thead tr th .filter-bar div div.searchbuttoncolumn img {
   width: 1em;
   height: 1em;
 }
+
+table tbody tr {
+  cursor: pointer;
+}
+
+table tbody tr:hover {
+  background-color: #eeeeee;
+  color: black;
+}
+
+table tbody tr td {
+  border: 2px solid #eeeeee;
+}
 /*# sourceMappingURL=Table.css.map */

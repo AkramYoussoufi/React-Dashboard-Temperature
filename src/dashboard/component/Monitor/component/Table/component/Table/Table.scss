@@ -187,7 +187,20 @@ table {
         }
       }
     }
+
     .Modification {
+    }
+  }
+  tbody {
+    tr {
+      cursor: pointer;
+      &:hover {
+        background-color: #eeeeee;
+        color: black;
+      }
+      td {
+        border: 2px solid #eeeeee;
+      }
     }
   }
 }

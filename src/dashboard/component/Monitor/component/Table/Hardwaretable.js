@@ -4,7 +4,7 @@ import { useState } from "react";
 import Table from "./component/Table/Table";
 
 function Hardwaretable() {
-  const sensor = JSON.parse(sessionStorage.userSensors);
+  const sensor = [...JSON.parse(sessionStorage.userSensors)];
   console.log(sensor);
   /*const sensorlist = */
 
