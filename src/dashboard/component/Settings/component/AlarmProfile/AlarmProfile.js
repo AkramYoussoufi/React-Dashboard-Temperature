@@ -1,11 +1,22 @@
 import "./AlarmProfile.css";
-export default function AlarmProfile() {
+import { useState } from "react";
+export default function AlarmProfile(props) {
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
+  const [settingsPanel, setSettingsPanel] = useState();
+
   return (
     <>
       {" "}
       {alarmProfile.map((x) => (
-        <li className="sensorlist">{x.name}</li>
+        <li
+          className="sensorlist"
+          onClick={() => {
+            setSettingsPanel(true);
+            props.showpanel(settingsPanel);
+          }}
+        >
+          {x.name}
+        </li>
       ))}
     </>
   );
