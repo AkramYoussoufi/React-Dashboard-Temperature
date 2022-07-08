@@ -2,7 +2,7 @@ import "./AlarmProfile.css";
 import { useState } from "react";
 export default function AlarmProfile(props) {
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
-  const [settingsPanel, setSettingsPanel] = useState();
+  const [settingsPanel, setSettingsPanel] = useState(true);
 
   return (
     <>

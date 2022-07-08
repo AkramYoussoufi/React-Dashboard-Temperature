@@ -1,15 +1,21 @@
 import "./Settings.css";
 import Sensors from "./component/Sensors/Sensors";
 import AlarmProfile from "./component/AlarmProfile/AlarmProfile";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AlarmProfileSettings from "./component/AlarmProfile/AlarmProfileSettings";
 import SensorsSettings from "./component/Sensors/SensorsSettings";
+import InfoRetriever from "../../../hooks/InfoRetriever";
 
 function Settings() {
+  useEffect(() => {
+    InfoRetriever();
+    console.log("oui");
+  });
   const [showForm, setShowForm] = useState({ display: "none" });
   const [settingsPanel, setSettingsPanel] = useState(false);
   const showpanel = function (what) {
     setSettingsPanel(what);
+    console.log(what);
   };
   return (
     <div className="settings-content">

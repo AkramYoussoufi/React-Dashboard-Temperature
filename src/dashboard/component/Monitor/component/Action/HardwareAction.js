@@ -20,7 +20,7 @@ function HardwareAction() {
     lowerLimites: 0,
   });
 
-  const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
+  const alarmProfile = [{name:''},...JSON.parse(sessionStorage.alarmProfile)];
   const inputs = [...JSON.parse(sessionStorage.userInputs)];
 
   const [sensorInputs, setSensorInputs] = useState({
@@ -29,6 +29,8 @@ function HardwareAction() {
     delay: null,
     alarmProfileId: "",
   });
+
+  console.log(sensorInputs)
 
   //VARIABLES FOR AXIOS
   const nextinput = function () {
@@ -48,7 +50,7 @@ function HardwareAction() {
           (Object.values(alarmProfileInputs).every(
             (x) => x !== null && x !== "" && x !== 0
           ) &&
-            alarmProfileInputs.upperLimit > alarmProfileInputs.lowerLimites) ||
+            alarmProfileInputs.upperLimite > alarmProfileInputs.lowerLimites) ||
           isAlarmSelected
         ) {
           if (!isAlarmSelected) {
@@ -207,8 +209,8 @@ function HardwareAction() {
                       });
                       if (
                         alarmProfile.findIndex((x) => {
-                          return x.name !== e.target.value;
-                        })
+                          return  e.target.value !== x.name;
+                        }) && !alarmProfileInputs.name
                       ) {
                         setErrMsg({
                           active: true,
@@ -244,7 +246,6 @@ function HardwareAction() {
                       }
                     }}
                   >
-                    <option></option>
                     {alarmProfile.map((x) => (
                       <option key={x.id}>{x.name}</option>
                     ))}
