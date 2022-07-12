@@ -9,16 +9,23 @@ import InfoRetriever from "../../../hooks/InfoRetriever";
 function Settings() {
   useEffect(() => {
     InfoRetriever();
-    console.log("oui");
   });
   const [showForm, setShowForm] = useState({ display: "none" });
   const [settingsPanel, setSettingsPanel] = useState(false);
-  const showpanel = function (what) {
+  const [indexof, setIndexof] = useState(0);
+  const showpanel = function (what, indexof) {
     setSettingsPanel(what);
-    console.log(what);
+    setIndexof(indexof);
   };
   return (
-    <div className="settings-content">
+    <div
+      className="settings-content"
+      onLoad={() => {
+        if ([...JSON.parse(sessionStorage.userSensors)].length == 0) {
+          setSettingsPanel(true);
+        }
+      }}
+    >
       <div className="settings-content-container">
         <div className="addbox" style={showForm}>
           {" "}
@@ -39,7 +46,11 @@ function Settings() {
         <div className="settings-options">
           <div className="options-header">Settings</div>
           <div className="options-sensors">
-            {settingsPanel ? <AlarmProfileSettings /> : <SensorsSettings />}
+            {settingsPanel ? (
+              <AlarmProfileSettings indexof={indexof} />
+            ) : (
+              <SensorsSettings indexof={indexof} />
+            )}
           </div>
         </div>
       </div>

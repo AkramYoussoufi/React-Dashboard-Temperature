@@ -12,7 +12,10 @@ export default function AlarmProfile(props) {
           className="sensorlist"
           onClick={() => {
             setSettingsPanel(true);
-            props.showpanel(settingsPanel);
+            const indexof = alarmProfile.findIndex((object) => {
+              return object.name === x.name;
+            });
+            props.showpanel(settingsPanel, indexof);
           }}
         >
           {x.name}

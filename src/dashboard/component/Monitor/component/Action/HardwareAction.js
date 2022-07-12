@@ -20,7 +20,10 @@ function HardwareAction() {
     lowerLimites: 0,
   });
 
-  const alarmProfile = [{name:''},...JSON.parse(sessionStorage.alarmProfile)];
+  const alarmProfile = [
+    { name: "" },
+    ...JSON.parse(sessionStorage.alarmProfile),
+  ];
   const inputs = [...JSON.parse(sessionStorage.userInputs)];
 
   const [sensorInputs, setSensorInputs] = useState({
@@ -29,8 +32,6 @@ function HardwareAction() {
     delay: null,
     alarmProfileId: "",
   });
-
-  console.log(sensorInputs)
 
   //VARIABLES FOR AXIOS
   const nextinput = function () {
@@ -98,13 +99,13 @@ function HardwareAction() {
       InfoRetriever();
     }
   };
-
   const SubmitHandlerAddSensor = async () => {
     try {
       const response = await axios.post("api/Sensors", sensorInputs);
       InfoRetriever();
       setErrMsg({ active: false });
       Setwindow({ transform: "translateY(-100%)" });
+      document.location.reload();
     } catch (err) {
       setErrMsg({
         active: true,
@@ -209,8 +210,9 @@ function HardwareAction() {
                       });
                       if (
                         alarmProfile.findIndex((x) => {
-                          return  e.target.value !== x.name;
-                        }) && !alarmProfileInputs.name
+                          return e.target.value !== x.name;
+                        }) &&
+                        !alarmProfileInputs.name
                       ) {
                         setErrMsg({
                           active: true,

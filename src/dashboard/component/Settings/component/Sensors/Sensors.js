@@ -12,7 +12,10 @@ export default function Sensors(props) {
           className="sensorlist"
           onClick={() => {
             setSettingsPanel(false);
-            props.showpanel(settingsPanel);
+            const indexof = sensors.findIndex((object) => {
+              return object.name === x.name;
+            });
+            props.showpanel(settingsPanel, indexof);
           }}
         >
           {x.name}

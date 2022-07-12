@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 import axios from "../../../../../api/axios";
 import InfoRetriever from "../../../../../hooks/InfoRetriever";
 
-export default function SensorsSettings() {
-  useEffect(() => {
-    InfoRetriever();
-  });
+export default function SensorsSettings(props) {
   const [DropDownDisable, setDropDownDisable] = useState({ height: "0px" });
   const [DropDownDelete, setDropDownDelete] = useState({ height: "0px" });
   const inputs = [...JSON.parse(sessionStorage.userInputs)];
+  const sensors = [...JSON.parse(sessionStorage.userSensors)];
   const alarmProfile = [
     { name: "" },
     ...JSON.parse(sessionStorage.alarmProfile),
@@ -22,9 +20,6 @@ export default function SensorsSettings() {
     Input: "",
     Delay: "",
   });
-
-  console.log(sensorUpdate);
-  console.log(Object.values(sensorUpdate).every((x) => x !== ""));
 
   return (
     <div className="boxpanel--sensor">
@@ -53,7 +48,28 @@ export default function SensorsSettings() {
               ARE YOU SURE YOU WANNA DISABLE THIS SENSOR ?
             </div>
             <div className="button--disable--enable">
-              <button>DISABLE</button>
+              <button
+                onClick={async () => {
+                  axios
+                    .post(
+                      "/api/Sensors/ActivateDeactivateSensor",
+
+                      {
+                        id: sensors[props.indexof].id,
+                        isActive: true,
+                      }
+                    )
+                    .then(function (response) {
+                      console.log(response);
+                      window.location.reload();
+                    })
+                    .catch(function (error) {
+                      console.log(error);
+                    });
+                }}
+              >
+                DISABLE
+              </button>
             </div>
           </div>
         </div>
@@ -81,7 +97,21 @@ export default function SensorsSettings() {
               ARE YOU SURE YOU WANNA DELETE THIS SENSOR ?
             </div>
             <div className="button--disable--enable">
-              <button>DELETE</button>
+              <button
+                onClick={async () => {
+                  axios
+                    .delete("/api/Sensors/" + sensors[props.indexof].id)
+                    .then(function (response) {
+                      console.log(response);
+                      window.location.reload();
+                    })
+                    .catch(function (error) {
+                      console.log(error);
+                    });
+                }}
+              >
+                DELETE
+              </button>
             </div>
           </div>
         </div>
@@ -196,7 +226,7 @@ export default function SensorsSettings() {
                     onChange={(e) => {
                       setSensorUpdate({
                         ...sensorUpdate,
-                        Delay: e.currentTarget.value,
+                        Delay: parseInt(e.currentTarget.value),
                       });
                     }}
                   >
@@ -206,8 +236,32 @@ export default function SensorsSettings() {
                     <option value="10">10</option>
                   </select>
                 </div>{" "}
-                <div className="button--update--sensor">
+                <div className="button--update--sensor" id="sensor">
                   <button
+                    onClick={async () => {
+                      axios
+                        .put("/api/Sensors/" + sensors[props.indexof].id, {
+                          id: sensors[props.indexof].id,
+                          inputId: sensorUpdate.Input,
+                          name: sensorUpdate.name,
+                          delay: sensorUpdate.Delay,
+                          alarmProfileId:
+                            alarmProfile[
+                              alarmProfile.findIndex((object) => {
+                                return (
+                                  object.name === sensorUpdate.alarmProfile
+                                );
+                              })
+                            ].id,
+                        })
+                        .then(function (response) {
+                          console.log(response);
+                          InfoRetriever();
+                        })
+                        .catch(function (error) {
+                          console.log(error);
+                        });
+                    }}
                     style={
                       Object.values(sensorUpdate).every((x) => x !== "")
                         ? {}

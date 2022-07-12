@@ -1,12 +1,13 @@
 import React from "react";
 import "./Table.css";
 import { useTable, useSortBy, useFilters, usePagination } from "react-table";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { COLUMNS } from "./COLUMNS";
 import upsort from "./up_sort.png";
 import downsort from "./down_sort.png";
 import nextpage from "./nextpage.svg";
 import prevpage from "./prevpage.svg";
+import InfoRetriever from "../../../../../../../hooks/InfoRetriever";
 
 export default function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
@@ -32,6 +33,11 @@ export default function Table(props) {
     useSortBy,
     usePagination
   );
+
+  useEffect(() => {
+    InfoRetriever();
+    console.log("yes");
+  });
 
   return (
     <div className="the-table">

@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=AlarmProfileSettings.css.map */
+input#LowerLimit {
+  width: 2em;
+}
+
+input#UpperLimit {
+  width: 2em;
+}
+
+.form--update--sensor#alarm {
+  padding-top: 55px;
+  padding-right: 100px;
+}
+/*# sourceMappingURL=AlarmProfileSettings.css.map */
