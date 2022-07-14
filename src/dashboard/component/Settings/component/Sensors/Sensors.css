@@ -23,4 +23,9 @@
 .sensorlist:hover {
   background-color: #eeeeee;
 }
+
+.sensorlist a {
+  text-decoration: none;
+  color: #424f5a;
+}
 /*# sourceMappingURL=Sensors.css.map */

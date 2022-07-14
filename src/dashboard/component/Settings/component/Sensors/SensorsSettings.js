@@ -49,7 +49,8 @@ export default function SensorsSettings(props) {
             </div>
             <div className="button--disable--enable">
               <button
-                onClick={async () => {
+                onClick={async (e) => {
+                  e.preventDefault();
                   axios
                     .post(
                       "/api/Sensors/ActivateDeactivateSensor",
@@ -61,7 +62,7 @@ export default function SensorsSettings(props) {
                     )
                     .then(function (response) {
                       console.log(response);
-                      window.location.reload();
+                      setTimeout(document.location.reload(), 2000);
                     })
                     .catch(function (error) {
                       console.log(error);
@@ -98,12 +99,13 @@ export default function SensorsSettings(props) {
             </div>
             <div className="button--disable--enable">
               <button
-                onClick={async () => {
+                onClick={async (e) => {
+                  e.preventDefault();
                   axios
                     .delete("/api/Sensors/" + sensors[props.indexof].id)
                     .then(function (response) {
                       console.log(response);
-                      window.location.reload();
+                      setTimeout(window.location.reload(), 2000);
                     })
                     .catch(function (error) {
                       console.log(error);

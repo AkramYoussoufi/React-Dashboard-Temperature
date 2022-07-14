@@ -1,7 +1,7 @@
 import React from "react";
 import "./Table.css";
 import { useTable, useSortBy, useFilters, usePagination } from "react-table";
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { COLUMNS } from "./COLUMNS";
 import upsort from "./up_sort.png";
 import downsort from "./down_sort.png";
@@ -11,11 +11,13 @@ import InfoRetriever from "../../../../../../../hooks/InfoRetriever";
 
 export default function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
-  const data = props.sentdata;
+  const [data, setData] = useState(props.sentdata);
 
-  // const defaultstatetable = useMemo(() => {
-  //   return { Filter: "ColumnFilter" };
-  // }, []);
+  setInterval(() => {
+    InfoRetriever();
+    setData([...JSON.parse(sessionStorage.userSensors)]);
+  }, 40000);
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -33,11 +35,6 @@ export default function Table(props) {
     useSortBy,
     usePagination
   );
-
-  useEffect(() => {
-    InfoRetriever();
-    console.log("yes");
-  });
 
   return (
     <div className="the-table">

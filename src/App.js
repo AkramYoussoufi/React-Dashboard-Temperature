@@ -9,9 +9,6 @@ import React from "react";
 import InfoRetriever from "./hooks/InfoRetriever";
 
 export default function App() {
-  window.setInterval(function () {
-    InfoRetriever();
-  }, 100);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

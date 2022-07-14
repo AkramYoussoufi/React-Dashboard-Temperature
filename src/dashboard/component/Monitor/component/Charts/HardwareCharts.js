@@ -1,7 +1,14 @@
 import "./HardwareCharts.css";
 import LinearChart from "./components/LinearChart";
+import { useEffect } from "react";
+import InfoRetriever from "../../../../../hooks/InfoRetriever";
 
 function HardwareCharts() {
+  useEffect(() => {
+    window.setInterval(function () {
+      InfoRetriever();
+    }, 1000);
+  });
   return (
     <div className="chart--container">
       <div className="chart">

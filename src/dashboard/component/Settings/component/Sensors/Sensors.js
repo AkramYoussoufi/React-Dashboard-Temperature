@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function Sensors(props) {
   const sensors = [...JSON.parse(sessionStorage.userSensors)];
   const [settingsPanel, setSettingsPanel] = useState();
+  const [active, setActive] = useState(false);
+  const [styleactive, setstyleactive] = useState();
 
   return (
     <>
@@ -11,6 +13,7 @@ export default function Sensors(props) {
         <li
           className="sensorlist"
           onClick={() => {
+            setActive(active ? true : false);
             setSettingsPanel(false);
             const indexof = sensors.findIndex((object) => {
               return object.name === x.name;

@@ -126,6 +126,25 @@ export default function AlarmProfileSettings(props) {
                         ? {}
                         : { opacity: "0.5", pointerEvents: "none" }
                     }
+                    onClick={async () => {
+                      axios
+                        .put(
+                          "/api/AlarmProfiles/" +
+                            alarmProfile[props.indexof].id,
+                          {
+                            name: alarmProfileUpdate.name,
+                            upperLimite: alarmProfileUpdate.upperLimite,
+                            lowerLimites: alarmProfileUpdate.lowerLimites,
+                          }
+                        )
+                        .then(function (response) {
+                          console.log(response);
+                          InfoRetriever();
+                        })
+                        .catch(function (error) {
+                          console.log(error);
+                        });
+                    }}
                   >
                     UPDATE
                   </button>

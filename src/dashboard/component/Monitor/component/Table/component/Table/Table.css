@@ -108,7 +108,7 @@ table {
 }
 
 table thead tr th:nth-child(1) {
-  width: 8%;
+  width: 10%;
 }
 
 table thead tr th:nth-child(1) .filter-bar {
@@ -116,7 +116,7 @@ table thead tr th:nth-child(1) .filter-bar {
 }
 
 table thead tr th:nth-child(2) {
-  width: 8%;
+  width: 30%;
 }
 
 table thead tr th:nth-child(2) .filter-bar div {
@@ -124,7 +124,7 @@ table thead tr th:nth-child(2) .filter-bar div {
 }
 
 table thead tr th:nth-child(3) {
-  width: 50%;
+  width: 10%;
 }
 
 table thead tr th:nth-child(3) .filter-bar div {
@@ -132,39 +132,11 @@ table thead tr th:nth-child(3) .filter-bar div {
 }
 
 table thead tr th:nth-child(4) {
-  width: 8%;
+  width: 10%;
 }
 
 table thead tr th:nth-child(4) .filter-bar div {
   width: 10em;
-}
-
-table thead tr th:nth-child(5) {
-  width: 8%;
-}
-
-table thead tr th:nth-child(5) .filter-bar div {
-  width: 3em;
-}
-
-table thead tr th:nth-child(6) {
-  width: 8%;
-}
-
-table thead tr th:nth-child(6) img:nth-child(1) {
-  right: 5px;
-}
-
-table thead tr th:nth-child(6) .filter-bar div {
-  width: 5em;
-}
-
-table thead tr th:nth-child(7) {
-  width: 8%;
-}
-
-table thead tr th:nth-child(7) .filter-bar {
-  display: none;
 }
 
 table thead tr th {

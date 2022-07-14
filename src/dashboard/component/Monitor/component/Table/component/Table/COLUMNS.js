@@ -1,14 +1,17 @@
 import ColumnFilter from "./ColumnFilter";
 
 export const COLUMNS = [
-  { Header: "Select" },
   /* { Header: "Id", accessor: "id", Filter: ColumnFilter },*/
   { Header: "Sensor", accessor: "name", Filter: ColumnFilter },
   {
-    Header: "Alarm Profile" /* accessor: "alarmProfileId"*/,
+    Header: "Alarm Profile ID" /* accessor: "alarmProfileId"*/,
     Filter: ColumnFilter,
+    accessor: "alarmProfileId",
   },
-  { Header: "Value", Filter: ColumnFilter },
-  { Header: "State", Filter: ColumnFilter },
-  { Header: "Edit" },
+  { Header: "Current Value", Filter: ColumnFilter, accessor: "currentValue" },
+  {
+    Header: "State",
+    Filter: ColumnFilter,
+    accessor: "sensorStatus",
+  },
 ];

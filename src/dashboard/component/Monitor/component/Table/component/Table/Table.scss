@@ -76,13 +76,13 @@ table {
   thead {
     tr {
       th:nth-child(1) {
-        width: 8%;
+        width: 10%;
         .filter-bar {
           display: none;
         }
       }
       th:nth-child(2) {
-        width: 8%;
+        width: 30%;
         .filter-bar {
           div {
             width: 3em;
@@ -90,7 +90,7 @@ table {
         }
       }
       th:nth-child(3) {
-        width: 50%;
+        width: 10%;
         .filter-bar {
           div {
             width: 10em;
@@ -98,36 +98,11 @@ table {
         }
       }
       th:nth-child(4) {
-        width: 8%;
+        width: 10%;
         .filter-bar {
           div {
             width: 10em;
           }
-        }
-      }
-      th:nth-child(5) {
-        width: 8%;
-        .filter-bar {
-          div {
-            width: 3em;
-          }
-        }
-      }
-      th:nth-child(6) {
-        width: 8%;
-        img:nth-child(1) {
-          right: 5px;
-        }
-        .filter-bar {
-          div {
-            width: 5em;
-          }
-        }
-      }
-      th:nth-child(7) {
-        width: 8%;
-        .filter-bar {
-          display: none;
         }
       }
       th {

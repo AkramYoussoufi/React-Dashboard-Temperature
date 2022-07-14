@@ -1,7 +1,8 @@
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import "./LinearChart.css";
+import InfoRetriever from "../../../../../../hooks/InfoRetriever";
 
 import React from "react";
 
@@ -9,7 +10,14 @@ export default function LinearChart() {
   const generatorcolor = [
     "#" + Math.trunc(Math.random() * 1000000),
     "#" + Math.trunc(Math.random() * 1000000),
+    "#" + Math.trunc(Math.random() * 1000000),
+    "#" + Math.trunc(Math.random() * 1000000),
   ];
+  useEffect(() => {
+    window.setInterval(function () {
+      InfoRetriever();
+    }, 1000);
+  }, [generatorcolor]);
   return (
     <div className="mychart">
       {" "}
@@ -51,6 +59,36 @@ export default function LinearChart() {
               ],
               borderColor: generatorcolor[1],
               backgroundColor: generatorcolor[1],
+            },
+            {
+              id: 3,
+              label: "Sensor 3",
+              data: [
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+              ],
+              borderColor: generatorcolor[2],
+              backgroundColor: generatorcolor[2],
+            },
+            {
+              id: 4,
+              label: "Sensor 4",
+              data: [
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+                Math.trunc(Math.random() * 30),
+              ],
+              borderColor: generatorcolor[3],
+              backgroundColor: generatorcolor[3],
             },
           ],
         }}
