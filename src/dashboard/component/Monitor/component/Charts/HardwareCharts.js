@@ -1,39 +1,42 @@
 import "./HardwareCharts.css";
 import LinearChart from "./components/LinearChart";
-import { useEffect } from "react";
-import InfoRetriever from "../../../../../hooks/InfoRetriever";
+import { useState } from "react";
 
-function HardwareCharts() {
-  useEffect(() => {
-    window.setInterval(function () {
-      InfoRetriever();
-    }, 1000);
-  });
+function HardwareCharts(props) {
+  const triggredalarm = [...JSON.parse(sessionStorage.triggredalarm)];
   return (
     <div className="chart--container">
       <div className="chart">
-        <LinearChart />
+        <LinearChart sentindex={props.sentindex} />
       </div>
       <div className="sensor-details">
-        <div className="box-text1">
-          <div>Id: n/a</div>
-          <div>Alarm Delay: n/a</div>
-          <div>Upper Alarm Limit: n/a</div>
-          <div>Lower Alarm Limit: n/a</div>
-          <div>Highest Value: n/a</div>
-          <div>Lowest Value: n/a</div>
-          <div>Average Value: n/a</div>
-          <div>MKT: n/a</div>
+        <div className="title--log">
+          <div>Alarm Log</div>
         </div>
-        <div className="box-text2">
-          <div></div>
-          <div>Logging Interval: n/a</div>
-          <div>Total Time Above Limit: n/a</div>
-          <div>Total Time Below Limit: n/a</div>
-          <div>Sensor Alarms: n/a</div>
-          <div>Sensor Warnings: n/a</div>
-          <div>Sensor Issues: n/a</div>
-          <div>System Issues: n/a</div>
+        <div className="box-text1">
+          {triggredalarm[0] ? (
+            triggredalarm.map((x) => {
+              return (
+                <div>
+                  <div className="detailstrigger">
+                    <b>{x.detail}</b>
+                    <br />
+                    <br />
+                    <b>DETAILS :</b>
+                    <br />
+                    <br />
+                    Triggred Sensor : <b>{x.sensorName} </b> <br />
+                    Triggred Sensor ID : <b>{x.sensorId} </b>
+                    <br />
+                    Triggred Value : <b>{x.value} </b>
+                    <br /> Number of Triggers : <b>{x.alramNumber}</b>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <span></span>
+          )}
         </div>
       </div>
     </div>

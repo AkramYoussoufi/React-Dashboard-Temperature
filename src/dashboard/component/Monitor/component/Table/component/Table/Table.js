@@ -12,7 +12,6 @@ import InfoRetriever from "../../../../../../../hooks/InfoRetriever";
 export default function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState(props.sentdata);
-
   /*  setInterval(() => {
     InfoRetriever();
     setData([...JSON.parse(sessionStorage.userSensors)]);
@@ -81,7 +80,14 @@ export default function Table(props) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td
+                      {...cell.getCellProps()}
+                      onClick={() => {
+                        props.getindex(cell.row.id);
+                      }}
+                    >
+                      {cell.render("Cell")}
+                    </td>
                   );
                 })}
               </tr>

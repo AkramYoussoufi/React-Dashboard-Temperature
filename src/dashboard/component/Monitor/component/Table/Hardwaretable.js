@@ -4,7 +4,7 @@ import InfoRetriever from "../../../../../hooks/InfoRetriever";
 
 import Table from "./component/Table/Table";
 
-function Hardwaretable() {
+function Hardwaretable(props) {
   /* setInterval(() => {
     InfoRetriever();
     console.log(
@@ -13,11 +13,17 @@ function Hardwaretable() {
       })
     );
   }, 40000);*/
+  const index = (index) => {
+    props.getindex(index);
+  };
 
   return (
     <div className="table--container">
       <div className="table">
-        <Table sentdata={[...JSON.parse(sessionStorage.userSensors)]} />
+        <Table
+          sentdata={[...JSON.parse(sessionStorage.userSensors)]}
+          getindex={index}
+        />
       </div>
     </div>
   );

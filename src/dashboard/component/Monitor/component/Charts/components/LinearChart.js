@@ -7,14 +7,14 @@ import axios from "../../../../../../api/axios";
 
 import React from "react";
 
-export default function LinearChart() {
+export default function LinearChart(props) {
   const [mesurement, setMesurement] = useState([]);
   const [date, setDate] = useState([]);
   const retrieveMesurement = async () => {
     try {
       const response = await axios.get(
         "https://localhost:44304/api/Sensors/" +
-          JSON.parse(sessionStorage.userSensors)[1].id
+          JSON.parse(sessionStorage.userSensors)[props.sentindex].id
       );
       setMesurement(
         response.data.result.measurements.map((x) => {
@@ -33,13 +33,12 @@ export default function LinearChart() {
       console.log(date);
     } catch {}
   };
-  const generatorcolor = [
-    "#" + Math.trunc(Math.random() * 1000000),
-    "#" + Math.trunc(Math.random() * 1000000),
-    "#" + Math.trunc(Math.random() * 1000000),
-    "#" + Math.trunc(Math.random() * 1000000),
-  ];
-  return (
+  useEffect(() => {
+    retrieveMesurement();
+  }, [props.sentindex]);
+
+  const generatorcolor = ["#619ED5"];
+  return JSON.parse(sessionStorage.userSensors)[0] ? (
     <div className="mychart" onClick={retrieveMesurement}>
       {" "}
       <Chart
@@ -64,7 +63,8 @@ export default function LinearChart() {
           datasets: [
             {
               id: 1,
-              label: JSON.parse(sessionStorage.userSensors)[1].name,
+              label: JSON.parse(sessionStorage.userSensors)[props.sentindex]
+                .name,
               data: [
                 mesurement[9],
                 mesurement[8],
@@ -77,6 +77,29 @@ export default function LinearChart() {
                 mesurement[1],
                 mesurement[0],
               ],
+              borderColor: generatorcolor[0],
+              backgroundColor: generatorcolor[0],
+            },
+          ],
+        }}
+      />
+    </div>
+  ) : (
+    <div className="mychart" onClick={retrieveMesurement}>
+      {" "}
+      <Chart
+        style={{ width: "450px" }}
+        type="line"
+        datasetIdKey="id"
+        data={{
+          labels: [],
+          mini: 0,
+          max: 50,
+          datasets: [
+            {
+              id: 1,
+              label: "",
+              data: [],
               borderColor: generatorcolor[0],
               backgroundColor: generatorcolor[0],
             },

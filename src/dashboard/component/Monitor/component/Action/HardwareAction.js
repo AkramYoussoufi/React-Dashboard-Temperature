@@ -105,7 +105,6 @@ function HardwareAction() {
       InfoRetriever();
       setErrMsg({ active: false });
       Setwindow({ transform: "translateY(-100%)" });
-      setTimeout(document.location.reload(), 2000);
     } catch (err) {
       setErrMsg({
         active: true,
@@ -114,6 +113,13 @@ function HardwareAction() {
       });
       InfoRetriever();
     }
+  };
+
+  const AddtheSensor = () => {
+    SubmitHandlerAddSensor();
+    setTimeout(() => {
+      document.location.reload();
+    }, 1000);
   };
 
   return (
@@ -418,9 +424,7 @@ function HardwareAction() {
             </button>
             <button
               className="button--next"
-              onClick={
-                addbutton === "Done" ? SubmitHandlerAddSensor : nextinput
-              }
+              onClick={addbutton === "Done" ? AddtheSensor : nextinput}
               style={
                 (Object.values(alarmProfileInputs).every(
                   (x) => x !== "" && x !== 0

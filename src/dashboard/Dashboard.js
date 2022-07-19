@@ -4,6 +4,7 @@ import useAuth from "../hooks/useAuth";
 import Monitor from "./component/Monitor/Monitor";
 import Settings from "./component/Settings/Settings";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import InfoRetriever from "../hooks/InfoRetriever";
 
 function Dashboard() {
   const { auth, setAuth } = useAuth();
@@ -17,7 +18,7 @@ function Dashboard() {
   const username = auth.user;
 
   return (
-    <div className="dashboard">
+    <div className="dashboard" onLoad={InfoRetriever}>
       <div></div>
       {/*THIS MUST KEPT EMPTY TO LET THE DIV RENDER CORRECTLY ITS BEHIND THE NAV BAR*/}
       <div className="navbar--column">

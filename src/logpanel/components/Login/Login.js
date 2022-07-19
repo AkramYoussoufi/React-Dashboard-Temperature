@@ -116,7 +116,9 @@ function Login() {
           InfoRetriever();
           setEmail("");
           setPassword("");
-          navigate("/Dashboard");
+          setTimeout(() => {
+            navigate("/Dashboard");
+          }, 1000);
         }
       } else {
         setErrMsg({ active: true, message: "Nice try" });

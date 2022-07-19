@@ -104,8 +104,10 @@ export default function SensorsSettings(props) {
                   axios
                     .delete("/api/Sensors/" + sensors[props.indexof].id)
                     .then(function (response) {
-                      console.log(response);
-                      setTimeout(window.location.reload(), 2000);
+                      InfoRetriever();
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 1000);
                     })
                     .catch(function (error) {
                       console.log(error);

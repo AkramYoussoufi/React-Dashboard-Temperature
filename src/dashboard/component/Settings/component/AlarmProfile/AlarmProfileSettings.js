@@ -50,7 +50,10 @@ export default function AlarmProfileSettings(props) {
                     )
                     .then(function (response) {
                       console.log(response);
-                      window.location.reload();
+                      InfoRetriever();
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 1000);
                     })
                     .catch(function (error) {
                       console.log(error);
