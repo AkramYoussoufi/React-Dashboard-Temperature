@@ -5,14 +5,14 @@ import InfoRetriever from "../../../../../hooks/InfoRetriever";
 import Table from "./component/Table/Table";
 
 function Hardwaretable() {
-  setInterval(() => {
+  /* setInterval(() => {
     InfoRetriever();
     console.log(
       [...JSON.parse(sessionStorage.userSensors)].map((x) => {
         return x.currentValue;
       })
     );
-  }, 40000);
+  }, 40000);*/
 
   return (
     <div className="table--container">

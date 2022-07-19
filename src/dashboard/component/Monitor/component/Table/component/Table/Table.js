@@ -13,10 +13,10 @@ export default function Table(props) {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState(props.sentdata);
 
-  setInterval(() => {
+  /*  setInterval(() => {
     InfoRetriever();
     setData([...JSON.parse(sessionStorage.userSensors)]);
-  }, 40000);
+  }, 40000);*/
 
   const {
     getTableProps,

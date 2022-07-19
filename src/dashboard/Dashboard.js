@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Dashboard.css";
 import useAuth from "../hooks/useAuth";
 import Monitor from "./component/Monitor/Monitor";
-import Deviations from "./component/Deviations/Deviations";
 import Settings from "./component/Settings/Settings";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
 
@@ -29,7 +28,6 @@ function Dashboard() {
         </div>
         <div className="navbar--list">
           <button onClick={() => setActive("Monitor")}>Monitor</button>
-          <button onClick={() => setActive("Deviations")}>Alarm</button>
           <button onClick={() => setActive("Settings")}>Settings</button>
         </div>
         <div className="username--title">
@@ -63,7 +61,6 @@ function Dashboard() {
         {/* they gonna work as long as u make specified divs and not general ones because it control them all*/}
         <div>
           {active === "Monitor" && <Monitor />}
-          {active === "Deviations" && <Deviations />}
           {active === "Settings" && <Settings />}
         </div>
       </div>

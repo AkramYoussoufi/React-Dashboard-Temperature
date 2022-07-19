@@ -105,6 +105,7 @@ function HardwareAction() {
       InfoRetriever();
       setErrMsg({ active: false });
       Setwindow({ transform: "translateY(-100%)" });
+      setTimeout(document.location.reload(), 2000);
     } catch (err) {
       setErrMsg({
         active: true,
@@ -113,7 +114,6 @@ function HardwareAction() {
       });
       InfoRetriever();
     }
-    setTimeout(document.location.reload(), 2000);
   };
 
   return (
