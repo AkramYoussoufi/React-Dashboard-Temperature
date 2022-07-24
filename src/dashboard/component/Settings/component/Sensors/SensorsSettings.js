@@ -1,6 +1,6 @@
 import "./SensorsSettings.css";
 import arrowdown from "./white-down-arrow-png-2.png";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "../../../../../api/axios";
 import InfoRetriever from "../../../../../hooks/InfoRetriever";
 
@@ -20,6 +20,7 @@ export default function SensorsSettings(props) {
     Input: "",
     Delay: "",
   });
+  const [errMsg, seterrMsg] = useState({ active: false, message: "" });
 
   return (
     <div className="boxpanel--sensor">
@@ -61,11 +62,14 @@ export default function SensorsSettings(props) {
                       }
                     )
                     .then(function (response) {
-                      console.log(response);
+                      seterrMsg({ active: false, message: "" });
                       setTimeout(document.location.reload(), 2000);
                     })
                     .catch(function (error) {
-                      console.log(error);
+                      seterrMsg({
+                        active: false,
+                        message: error.response.data.Errors[0].Message,
+                      });
                     });
                 }}
               >
@@ -105,12 +109,19 @@ export default function SensorsSettings(props) {
                     .delete("/api/Sensors/" + sensors[props.indexof].id)
                     .then(function (response) {
                       InfoRetriever();
+                      seterrMsg({
+                        active: false,
+                        message: "",
+                      });
                       setTimeout(() => {
                         window.location.reload();
                       }, 1000);
                     })
                     .catch(function (error) {
-                      console.log(error);
+                      seterrMsg({
+                        active: true,
+                        message: error.response.data.Errors[0].Message,
+                      });
                     });
                 }}
               >
@@ -174,6 +185,12 @@ export default function SensorsSettings(props) {
             </div>
             <div className="form--update--sensor">
               <form>
+                <div
+                  className="errMsg"
+                  style={{ display: errMsg.active ? "block" : "none" }}
+                >
+                  {errMsg.message}
+                </div>
                 <div className="form--labelinput--container">
                   <label>Sensor Name</label>
                   <input
@@ -259,11 +276,17 @@ export default function SensorsSettings(props) {
                             ].id,
                         })
                         .then(function (response) {
-                          console.log(response);
+                          seterrMsg({
+                            active: true,
+                            message: "",
+                          });
                           InfoRetriever();
                         })
                         .catch(function (error) {
-                          console.log(error);
+                          seterrMsg({
+                            active: true,
+                            message: error.response.data.Errors[0].Message,
+                          });
                         });
                     }}
                     style={

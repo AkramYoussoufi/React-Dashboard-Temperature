@@ -9,6 +9,7 @@ export default function AlarmProfile(props) {
       {" "}
       {alarmProfile.map((x) => (
         <li
+          key={alarmProfile.id}
           className="sensorlist"
           onClick={() => {
             setSettingsPanel(true);

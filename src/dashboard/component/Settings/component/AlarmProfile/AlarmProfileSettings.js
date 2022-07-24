@@ -7,6 +7,7 @@ import InfoRetriever from "../../../../../hooks/InfoRetriever";
 export default function AlarmProfileSettings(props) {
   const [DropDownDelete, setDropDownDelete] = useState({ height: "0px" });
   const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
+  const [errMsg, seterrMsg] = useState({ active: false, message: "" });
 
   const [alarmProfileUpdate, setAlarmProfileUpdate] = useState({
     name: "",
@@ -51,12 +52,17 @@ export default function AlarmProfileSettings(props) {
                     .then(function (response) {
                       console.log(response);
                       InfoRetriever();
+                      seterrMsg({ active: false, message: "" });
                       setTimeout(() => {
                         window.location.reload();
                       }, 1000);
                     })
                     .catch(function (error) {
                       console.log(error);
+                      seterrMsg({
+                        active: true,
+                        message: error.response.data.Errors[0].Message,
+                      });
                     });
                 }}
               >
@@ -80,6 +86,12 @@ export default function AlarmProfileSettings(props) {
             </div>
             <div className="form--update--sensor" id="alarm">
               <form>
+                <div
+                  className="errMsg"
+                  style={{ display: errMsg.active ? "block" : "none" }}
+                >
+                  {errMsg.message}
+                </div>
                 <div className="form--labelinput--container">
                   <label>Alarm Profile Name</label>
                   <input
@@ -141,11 +153,14 @@ export default function AlarmProfileSettings(props) {
                           }
                         )
                         .then(function (response) {
-                          console.log(response);
+                          seterrMsg({ active: false, message: "" });
                           InfoRetriever();
                         })
                         .catch(function (error) {
-                          console.log(error);
+                          seterrMsg({
+                            active: true,
+                            message: error.response.data.Errors[0].Message,
+                          });
                         });
                     }}
                   >

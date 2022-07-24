@@ -10,8 +10,10 @@ function Settings() {
   useEffect(() => {
     InfoRetriever();
   });
+  const sensors = [...JSON.parse(sessionStorage.userSensors)];
+  const alarmProfile = [...JSON.parse(sessionStorage.alarmProfile)];
   const [showForm, setShowForm] = useState({ display: "none" });
-  const [settingsPanel, setSettingsPanel] = useState(false);
+  const [settingsPanel, setSettingsPanel] = useState(true);
   const [indexof, setIndexof] = useState(0);
   const showpanel = function (what, indexof) {
     setSettingsPanel(what);
@@ -32,19 +34,26 @@ function Settings() {
         </div>
         <div className="settings-side-bar">
           <div className="side-bar-header">
-            <div>Sensors & Alarm Profile</div>
+            <div>Alarm Profile & Sensors</div>
           </div>
           <div className="side-bar-sensors">
             <ul>
+              <div className="list--title">Alarm Profile</div>
+              <AlarmProfile showpanel={showpanel} />{" "}
               <div className="list--title">Sensors</div>
               <Sensors showpanel={showpanel} />
-              <div className="list--title">Alarm Profile</div>
-              <AlarmProfile showpanel={showpanel} />
             </ul>
           </div>
         </div>
         <div className="settings-options">
-          <div className="options-header">Settings</div>
+          <div className="options-header">
+            Settings
+            {alarmProfile.length >= 1
+              ? settingsPanel
+                ? " of " + alarmProfile[indexof].name
+                : " of " + sensors[indexof].name
+              : ""}
+          </div>
           <div className="options-sensors">
             {settingsPanel ? (
               <AlarmProfileSettings indexof={indexof} />

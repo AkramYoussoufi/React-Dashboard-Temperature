@@ -11,6 +11,8 @@ export default function Sensors(props) {
       {" "}
       {sensors.map((x) => (
         <li
+          key={sensors.id}
+          style={{}}
           className="sensorlist"
           onClick={() => {
             setActive(active ? true : false);

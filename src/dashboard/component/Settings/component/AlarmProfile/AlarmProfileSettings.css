@@ -1,3 +1,9 @@
+.errMsg {
+  background-color: #eb6270;
+  color: white;
+  padding: 10px;
+}
+
 input#LowerLimit {
   width: 2em;
 }

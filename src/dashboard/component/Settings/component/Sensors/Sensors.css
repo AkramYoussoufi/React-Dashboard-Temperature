@@ -28,4 +28,8 @@
   text-decoration: none;
   color: #424f5a;
 }
+
+li:nth-child(2).sensorlistselect {
+  background-color: red;
+}
 /*# sourceMappingURL=Sensors.css.map */

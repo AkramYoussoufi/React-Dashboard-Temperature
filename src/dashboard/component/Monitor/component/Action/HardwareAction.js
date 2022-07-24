@@ -202,7 +202,7 @@ function HardwareAction() {
                   </div>
                 </div>
                 <div className="alarm-name-input-box">
-                  <label htmlFor="alarmName">Alarm Name</label>
+                  <label htmlFor="alarmName">Alarm Profile</label>
                   <input
                     type="text"
                     id="alarmName"
